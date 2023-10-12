@@ -1,0 +1,30 @@
+html {
+    background: #f2c7fa;
+}
+body {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 3rem;
+    color: #210303;
+}
+ul {
+    padding-top: 2rem;
+}
+li {
+    text-align: center;
+}
+a {
+    color: #210303;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+a:hover {
+    color: #5e1a1a;
+    text-shadow: 1px 1px 2px brown;
+}
