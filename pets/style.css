@@ -1,0 +1,17 @@
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fcd8e2;
+}
+ul {
+    padding-top: 2rem;
+}
+li {
+    padding-top: 12rem;
+}
+a {
+    color: #850404;
+    font-size: 2rem;
+    text-decoration: none;
+}
