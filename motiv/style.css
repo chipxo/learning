@@ -1,0 +1,25 @@
+body {
+    background: black;
+}
+main {
+    margin-top: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+img {
+    width: 40rem;
+    height: 20rem;
+    border: 0.3rem solid white;
+}
+h1 {
+    font-size: 3rem;
+    color: white;
+    margin-top: 1.5rem;
+    text-transform: uppercase;
+}
+p {
+    margin-top: 2rem;
+    color: white;
+}
