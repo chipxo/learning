@@ -6,68 +6,62 @@ body {
     flex-direction: column;
     min-height: 95vh;
 }
-header {
-    margin-top: 1rem;
-}
-main {
-    margin-top: 2rem;
-    width: 60rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+.main {
     flex: 1;
 }
+
 h1 {
-    font-size: 3rem;
+    font-size: 5rem;
 }
-.container {
-    display: flex;
-    gap: 8rem;
-}
-.text {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 3rem 1rem 2rem 1rem;
-    margin-left: 1rem;
-}
-.text h2 {
-    font-weight: bold;
-    font-size: 2rem;
-}
-.text p {
-    font-weight: bold;
-}
-.logo {
-    width: 20rem;
-}
-p {
-    width: 20rem;
-}
-.left {
-    display: flex;
-}
-.right {
-    display: flex;
-}
-.left img, .right img {
-    width: 20rem;
-    height: 15rem;
-}
+
 footer {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+    text-align: right;
     color: midnightblue;
 }
-/*@media (max-width: 1250px) {*/
-/*    main, .container, .left, .right {*/
-/*        display: flex;*/
-/*        flex-direction: column;*/
-/*        justify-content: center;*/
-/*        align-items: center;*/
-/*    }*/
-/*    img {*/
-/*        width: 95%;*/
-/*    }*/
-/*}*/
+
+.tile-image {
+    height: 200px;
+    float: left;
+    margin-right: 50px;
+}
+
+.card {
+    width: 45%;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+span {
+    color: midnightblue;
+}
+
+@media (max-width: 680px) {
+    .logo {
+        width: 100px;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+
+    .card {
+        width: 100%;
+        display: block;
+        margin-bottom: 30px;
+        text-align: justify;
+    }
+
+    .card img {
+        margin-bottom: 10px;
+        width: 100%;
+        display: inline;
+        object-fit: cover;
+    }
+}
