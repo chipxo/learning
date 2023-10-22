@@ -135,12 +135,14 @@ main .blue img {
 .item8 {
     grid-area: item8;
 }
+/*footer*/
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
 }
+/*media*/
 @media (max-width: 1024px) {
     main .blue {
         padding: 2rem;
