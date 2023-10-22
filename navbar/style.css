@@ -2,9 +2,6 @@
     transition: all 0.3s linear;
 }
 .zone {
-    /*padding:30px 50px;*/
-    /*margin:40px 60px;*/
-    /*display:inline-block;*/
     cursor:pointer;
     color:#FFF;
     font-size:2em;
@@ -72,7 +69,6 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 1rem;
-    margin: 0 auto;
 }
 header .main-links a, header .contact a {
     text-decoration: none;
