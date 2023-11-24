@@ -1,0 +1,40 @@
+.promises {
+  @include size-bc(1170px, 100%, fit-content, unset);
+  @include position(relative, 1);
+  @include sec-marg(165px auto 0 auto);
+  img {
+    @include size-bc(unset, 600px, 540px, unset);
+    @include position(absolute, -1);
+    top: 0;
+    left: 0;
+  }
+  .content-box {
+    @include size-bc(770px, 100%, fit-content, $blue-deep);
+    @include position(relative, 1);
+    @include grid-2-col(300px);
+    top: 55px;
+    left: 400px;
+    opacity: 0.9;
+    align-items: flex-start;
+    gap: 56px;
+    padding: 75px 0 75px 70px;
+    &:hover {
+      opacity: 1;
+    }
+    .btn {
+      @include size-bc(unset, 300px, 90px, unset);
+      margin-top: 15px;
+      .btn-bc {
+        top: 43px;
+        left: 101px;
+      }
+      button {
+        @include size-bc(unset, 100%, 100%, unset);
+        border: 1px solid $text-green-neon;
+        &:hover {
+          border: $border-common;
+        }
+      }
+    }
+  }
+}

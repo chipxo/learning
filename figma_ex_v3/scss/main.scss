@@ -1,0 +1,80 @@
+@import "reset";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display+SC:ital@0;1&display=swap");
+@import "var";
+@import "extend";
+@import "mixin";
+* {
+  box-sizing: border-box;
+  transition: 0.3s ease-in-out;
+}
+@import "default";
+@import "header";
+@import "body";
+@import "first_sc";
+@import "info";
+@import "benefits";
+@import "quote";
+@import "video-sec";
+@import "promises";
+@import "reviews";
+@import "footer";
+@media (max-width: 1570px) {
+  main {
+    > * {
+      margin: 10% 10%;
+    }
+  }
+  .info {
+    display: flex;
+    justify-content: center;
+    img {
+      left: 10rem;
+    }
+    .content-box {
+      left: 0;
+    }
+  }
+  .promises {
+    display: flex;
+    justify-content: center;
+    img {
+      left: 10rem;
+    }
+    .content-box {
+      left: 0;
+    }
+  }
+}
+@media (max-width: 1220px) {
+  .info {
+    display: flex;
+    justify-content: center;
+    img {
+      left: 10rem;
+    }
+    .content-box {
+      left: 0;
+    }
+  }
+  .benefits {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+  .promises {
+    display: flex;
+    justify-content: center;
+    img {
+      left: 10rem;
+    }
+    .content-box {
+      left: 0;
+    }
+  }
+  .reviews {
+    .cl-rev-ex {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

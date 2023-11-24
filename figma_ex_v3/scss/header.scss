@@ -1,0 +1,47 @@
+header {
+  @include size-bc(unset, 100%, fit-content, unset);
+  padding-top: 30px;
+  .bc {
+    @include position(absolute, -1);
+    top: 0;
+    max-height: 1028px;
+    @include size-bc(unset, 100%, 50vh, unset);
+    overflow: hidden;
+  }
+  .blur {
+    @include position(relative, 1);
+    justify-content: space-between;
+    @include size-bc(100%, 100%, 80px, unset);
+    backdrop-filter: blur(4px);
+    a {
+      img {
+        &:hover {
+          scale: 1.1;
+        }
+      }
+    }
+    nav {
+      ul {
+        gap: 30px;
+        li {
+          a {
+            padding-bottom: 5px;
+            border: 3px solid transparent;
+            border-left: 0;
+            border-right: 0;
+            border-top: 0;
+            &:hover {
+              border: 3px solid;
+              border-image-slice: 1;
+              border-width: 3px;
+              border-image-source: linear-gradient(90deg, #53f3ce7e, #114238);
+              border-left: 0;
+              border-right: 0;
+              border-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

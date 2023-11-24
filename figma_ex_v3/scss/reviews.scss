@@ -1,0 +1,41 @@
+.reviews {
+  @include size-bc(1170px, 100%, fit-content, unset);
+  @include sec-marg(250px auto 0 auto);
+  border-bottom: $border-common;
+  padding-bottom: 100px;
+  &:hover {
+    border-bottom: $border-hover;
+  }
+  .cl-rev-heading {
+    p {
+      @include text-set(50px, 40%);
+    }
+  }
+  .cl-rev-ex {
+    gap: 30px;
+    > * {
+      @include size-bc(unset, 370px, 340px, $bc);
+      justify-content: space-between;
+      padding: 30px 40px;
+      background-blend-mode: soft-light;
+      &:hover {
+        scale: 1.1;
+      }
+      p {
+        width: 100%;
+        &:first-child {
+          @include text($primary-white, $common-font, 16px, normal, $light-weight, 26px);
+        }
+      }
+    }
+    .it-1 {
+      background-image: url(../img/it1.jpg);
+    }
+    .it-2 {
+      background-image: url(../img/it2.png);
+    }
+    .it-3 {
+      background-image: url(../img/it3.png);
+    }
+  }
+}

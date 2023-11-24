@@ -1,0 +1,29 @@
+@mixin text($color, $font-family, $font-size, $font-style, $font-weight, $line-height) {
+  color: $color;
+  font-family: $font-family;
+  font-size: $font-size;
+  font-style: $font-style;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+@mixin size-bc($max-width, $width, $height, $bc) {
+  max-width: $max-width;
+  width: $width;
+  height: $height;
+  background: $bc;
+}
+@mixin position($position, $z-index) {
+  position: $position;
+  z-index: $z-index;
+}
+@mixin text-set($pad-bot, $width) {
+  margin-bottom: $pad-bot;
+  width: $width;
+}
+@mixin sec-marg($margin) {
+  margin: $margin;
+}
+@mixin grid-2-col($width) {
+  display: grid;
+  grid-template-columns: repeat(2, $width);
+}

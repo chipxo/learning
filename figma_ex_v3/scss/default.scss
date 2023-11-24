@@ -1,0 +1,84 @@
+a {
+  @include text($primary-white, $common-font, 14px, normal, $mid-weight, 24px);
+  text-decoration: none;
+}
+h2 {
+  @include text($primary-white, $header-font, 44px, normal, $mid-weight, 52px);
+  @include text-set(20px, 523px);
+  span {
+    @include text($text-blue, $header-font, 44px, italic, $mid-weight, 52px);
+  }
+}
+h3 {
+  @include text($primary-white, $header-font, 68px, normal, $mid-weight, 72px);
+  @include text-set(12px, fit-content);
+  text-align: center;
+  &:not(.cnt-3 h3)::before {
+    content: "$";
+  }
+}
+h4 {
+  @include text($primary-white, $header-font, 40px, normal, $mid-weight, 48px);
+  @include text-set(30px, 50%);
+  margin-top: 50px;
+  span {
+    @include text($text-blue, $header-font, 40px, italic, $mid-weight, 48px);
+  }
+}
+h5 {
+  @include text($primary-white, $header-font, 24px, normal, $mid-weight, 48px);
+  @include text-set(15px, 500px);
+}
+p {
+  @include text($primary-white, $common-font, 18px, normal, $light-weight, 26px);
+  @include text-set(0, 50%);
+  opacity: 0.8;
+}
+.btn {
+  @include position(relative, 1);
+  @include size-bc(unset, fit-content, 13px, unset);
+  button {
+    @include text($text-green-neon, $common-font, 20px, normal, $heavy-weight, 20px);
+    background: none;
+    border: none;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  .btn-bc {
+    @include position(absolute, -1);
+    @include size-bc(unset, 112px, 13px, $text-green-neon);
+    top: 10px;
+    left: 17px;
+    opacity: 0.3;
+  }
+}
+.fl-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fl-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pad-sec {
+  padding: 0 35px;
+}
+.divider {
+  @include size-bc(inset, 100px, 3px, $text-blue);
+  margin-bottom: 40px;
+  &:hover {
+    background-color: $text-green-neon;
+  }
+}
+.author {
+  @include text($primary-white, $header-font, 20px, italic, $mid-weight, 20px);
+  opacity: 1;
+  letter-spacing: 1.6px;
+  text-align: start;
+}

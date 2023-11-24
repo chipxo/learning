@@ -1,0 +1,8 @@
+.first-screen {
+  @include size-bc(1170px, 100%, fit-content, unset);
+  @include sec-marg(150px auto 0 auto);
+  align-items: flex-start;
+  p {
+    @include text-set(50px, 439px);
+  }
+}

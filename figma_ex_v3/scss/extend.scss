@@ -1,0 +1,14 @@
+%fl-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+%fl-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+%pad {
+  padding: 0 3rem;
+}

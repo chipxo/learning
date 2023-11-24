@@ -1,0 +1,19 @@
+.benefits {
+  @include size-bc(fit-content, auto, fit-content, unset);
+  @include sec-marg(165px auto 0 auto);
+  @include grid-2-col(570px);
+  row-gap: 112px;
+  column-gap: 30px;
+  > * {
+    @include size-bc(unset, 70%, 300px, unset);
+    padding: 20px 30px;
+    align-items: flex-start;
+    border-top: $border-common;
+    &:hover {
+      border-top: 1px solid $text-green-neon;
+    }
+  }
+  .benf-list-3 {
+    padding-bottom: 0;
+  }
+}

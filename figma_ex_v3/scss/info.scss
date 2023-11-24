@@ -1,0 +1,61 @@
+.info {
+  @include size-bc(1170px, 100%, fit-content, unset);
+  @include position(relative, 1);
+  @include sec-marg(195px auto 0 auto);
+  img {
+    @include size-bc(unset, 570px, 670px, unset);
+    @include position(absolute, -1);
+    top: 0;
+    left: 0;
+  }
+  .content-box {
+    @include size-bc(770px, fit-content, 580px, $blue-deep);
+    @include position(relative, 1);
+    top: 45px;
+    left: 400px;
+    opacity: 0.9;
+    align-items: flex-start;
+    gap: 56px;
+    padding: 45px;
+    overflow: hidden;
+    &:hover {
+      opacity: 1;
+    }
+    .content-box-1 {
+      .cnt-1 {
+        p {
+          @include text-set(40px, fit-content);
+        }
+      }
+      .cnt-2 {
+        h3 {
+          width: 300px;
+        }
+        p {
+          @include text-set(40px, 172px);
+        }
+      }
+      .cnt-3 {
+        p {
+          @include text-set(40px, fit-content);
+        }
+      }
+    }
+    .content-box-2 {
+      align-items: flex-start;
+      p {
+        &:first-child {
+          @include text-set(40px, 400px);
+        }
+        &:nth-child(2) {
+          @include text-set(50px, 400px);
+        }
+      }
+    }
+    .btn {
+      .btn-bc {
+        width: 186px;
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+footer {
+  @include size-bc(1170px, 100%, fit-content, unset);
+  @include sec-marg(60px auto 0 auto);
+  .contacts {
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: $border-common;
+    padding-bottom: 100px;
+    &:hover {
+      border-bottom: $border-hover;
+    }
+    .text {
+      align-items: flex-start;
+      p {
+        @include text-set(0, 470px);
+      }
+    }
+    form {
+      @include size-bc(unset, 470px, fit-content, unset);
+      align-items: flex-start;
+      gap: 40px;
+      label {
+        input {
+          @include text($gray-dark, $header-font, 18px, italic, $mid-weight, 20px);
+          letter-spacing: 1px;
+          width: 470px;
+          padding-bottom: 12px;
+          background: none;
+          border: none;
+          border-bottom: $border-common;
+          &:focus {
+            scale: 1.1;
+          }
+          &:hover {
+            scale: 1.1;
+          }
+        }
+      }
+      .btn {
+        .btn-bc {
+          @include size-bc(unset, 163px, 13px, $text-green-neon);
+        }
+      }
+    }
+  }
+  .other {
+    padding: 30px 0;
+    justify-content: space-between;
+    a {
+      &:hover {
+        scale: 1.1;
+      }
+    }
+    p {
+      &:not(.made-by p)::before {
+        content: "©";
+        margin-right: 5px;
+      }
+    }
+    .made-by {
+      gap: 12px;
+    }
+    .fot-links {
+      gap: 32px;
+    }
+  }
+}

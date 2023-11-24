@@ -1,0 +1,22 @@
+.quote {
+  @include size-bc(1170px, 100%, 400px, url(../img/quote-background.png));
+  @include sec-marg(120px auto 0 auto);
+  @include position(relative, 0);
+  img {
+    @include position(absolute, 1);
+    top: 70px;
+    left: 172px;
+  }
+  p {
+    &:first-of-type {
+      @include text($primary-white, $common-font, 32px, normal, $mid-weight, 46px);
+      @include size-bc(unset, 710px, 140px, unset);
+      letter-spacing: 1.3px;
+      opacity: 1;
+      margin-bottom: 40px;
+    }
+    &:last-child {
+      width: 710px;
+    }
+  }
+}
