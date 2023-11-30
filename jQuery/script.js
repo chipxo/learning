@@ -6,11 +6,15 @@ let userClickedPattern = [];
 let started = false;
 let level = 0;
 
-$(document).keydown(function () {
-  if (!started) {
-    $("#level-title").text("Level " + level);
-    nextSequence();
-    started = true;
+$(document).keydown(function (event) {
+  const key = event.key.toLowerCase();
+
+  if (key === "a") {
+    if (!started) {
+      $("#level-title").text("Level " + level);
+      nextSequence();
+      started = true;
+    }
   }
 });
 
