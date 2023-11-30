@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      gridAutoRows: {
+        "200px": "minmax(0, 300px)",
+      },
+    },
   },
   plugins: [],
 };

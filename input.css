@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 li {
-  @apply border border-black bg-white rounded-md px-2 py-5 flex items-center
-  justify-center transition-all hover:scale-110 hover:cursor-pointer;
+  @apply relative bg-white rounded-lg flex items-center
+  justify-center transition-all  hover:cursor-pointer hover:scale-110;
 }
 body {
-  background: linear-gradient(45deg, rgb(40, 26, 100), #6f0179);
+  background: linear-gradient(to right, rgb(40, 26, 100), #6f0179);
 }
