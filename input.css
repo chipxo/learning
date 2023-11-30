@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+li {
+  @apply border border-black bg-white rounded-md px-2 py-5 flex items-center
+  justify-center transition-all hover:scale-110 hover:cursor-pointer;
+}
+body {
+  background: linear-gradient(45deg, rgb(40, 26, 100), #6f0179);
+}
