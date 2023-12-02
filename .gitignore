@@ -5,3 +5,7 @@ node_modules
 package.json
 package-lock.json
 postcss.config.js
+prettier.config.js
+.prettierignore
+.prettierrrc
+tailwind.config.js
