@@ -24,7 +24,7 @@ const Header = () => {
     <header
       className={`fixed left-0 z-[999] w-full bg-cover bg-no-repeat py-3  transition-all ${
         isScrolled
-          ? "bg-header top-0 bg-cover bg-center shadow-2xl"
+          ? "bg-news top-0 bg-cover bg-center shadow-2xl"
           : "top-0 md:top-4"
       }`}
     >

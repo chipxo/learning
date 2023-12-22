@@ -6,12 +6,8 @@ const Nav = ({ links, isBurger }) => {
   const [hoveredLinkId, setHoveredLinkId] = useState(null);
 
   const showOnClick = isBurger
-    ? "absolute top-0 left-0 h-screen bg-header bg-cover w-full grid place-items-center duration-500"
-    : "-translate-y-full absolute top-0 left-0 h-screen bg-header bg-cover w-full grid place-items-center duration-500";
-
-  const setNavOnClick = isBurger
-    ? "grid place-items-center gap-y-14 font-bold"
-    : "grid place-items-center gap-y-14 font-bold";
+    ? "duration-500"
+    : "-translate-y-full duration-200";
 
   const handleMouseEnter = (id) => {
     setHoveredLinkId(id);
@@ -32,17 +28,21 @@ const Nav = ({ links, isBurger }) => {
   return (
     <nav
       id="nav"
-      className={window.innerWidth < 768 ? showOnClick : "hidden md:block"}
+      className={
+        window.innerWidth < 768
+          ? `${showOnClick} bg-header absolute left-0 top-0 grid h-screen w-full place-items-center bg-cover`
+          : "hidden md:block"
+      }
     >
       <ul
         className={`${
           window.innerWidth < 768
-            ? setNavOnClick
+            ? "grid place-items-center gap-y-14 font-bold"
             : "grid grid-cols-4 justify-items-center "
         } text-sm uppercase text-white`}
       >
         {links.map(({ id, title, href }) => (
-          <li key={id} className="relative">
+          <li key={id} className="relative lg:text-xl">
             <a
               onClick={() => handleClick(id)}
               onMouseEnter={() => handleMouseEnter(id)}
@@ -51,7 +51,7 @@ const Nav = ({ links, isBurger }) => {
               className="relative inline-block"
             >
               <span
-                className={`absolute -left-[12px] top-[7px] h-[6px] w-[6px] rounded-full border ${
+                className={`absolute -left-[12px] top-[7px] h-[6px] w-[6px] rounded-full border lg:-left-[14px] lg:top-[10px] lg:h-[8px] lg:w-[8px] ${
                   id === activeLinkId || id === hoveredLinkId ? "bg-white" : ""
                 }`}
               ></span>

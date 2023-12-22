@@ -4,9 +4,9 @@ import slides from "../../components/Slider/mock.json";
 
 const LatestNews = () => {
   return (
-    <section id="news" className="bg-news bg-cover bg-center">
+    <section id="news" className="bg-news scroll-mt-16 bg-cover bg-center">
       <div className="container px-4 py-20 md:px-0">
-        <SectionsTitle text={"Latest News"} isBgDark={true} />
+        <SectionsTitle text={"Latest News"} isBgDark={true} isTitle={true} />
         <Slider slides={slides} />
       </div>
     </section>

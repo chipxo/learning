@@ -1,6 +1,6 @@
 const Card = ({ id, image, title, description, userName, data, userPhoto }) => {
   return (
-    <div className="mx-auto mb-12 max-w-[370px] bg-white ">
+    <div className="mx-auto mb-12 max-w-[370px] bg-white drop-shadow-2xl">
       <img src={image} alt={title} className="h-44 w-full object-cover" />
       <div className="flex flex-col gap-y-4 px-5 py-5">
         <h2 className="text-[18px] font-bold text-blue-900 md:text-[22px]">
