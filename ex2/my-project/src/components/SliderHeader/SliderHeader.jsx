@@ -23,19 +23,34 @@ export default () => {
       pagination={{ clickable: true }}
     >
       <SwiperSlide className="grid place-items-center">
-        <Slide />
+        <Slide
+          title={"Simple & Modern"}
+          description={"We make world beautiful every day"}
+        />
       </SwiperSlide>
       <SwiperSlide className="grid place-items-center">
-        <Slide />
+        <Slide
+          title={"Simple & Modern"}
+          description={"We make world beautiful every day"}
+        />
       </SwiperSlide>
       <SwiperSlide className="grid place-items-center">
-        <Slide />
+        <Slide
+          title={"Simple & Modern"}
+          description={"We make world beautiful every day"}
+        />
       </SwiperSlide>
       <SwiperSlide className="grid place-items-center">
-        <Slide />
+        <Slide
+          title={"Simple & Modern"}
+          description={"We make world beautiful every day"}
+        />
       </SwiperSlide>
       <SwiperSlide className="grid place-items-center">
-        <Slide />
+        <Slide
+          title={"Simple & Modern"}
+          description={"We make world beautiful every day"}
+        />
       </SwiperSlide>
     </Swiper>
   );
