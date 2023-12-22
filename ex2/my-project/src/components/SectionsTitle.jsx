@@ -5,7 +5,7 @@ const SectionsTitle = ({ text, isBgDark }) => {
 
   return (
     <h2
-      className={`relative my-[90px] text-center text-4xl font-bold uppercase  before:absolute before:-top-5 before:h-[2px] before:w-[100px] before:translate-x-20  before:content-[''] ${titleClassName}`}
+      className={`relative my-4 text-center text-xl font-bold uppercase before:absolute before:-top-5 before:h-[2px] before:w-[80px]  before:translate-x-[34%] before:content-[''] md:my-6 md:text-2xl md:before:w-[100px] md:before:translate-x-[30%] lg:my-[90px] lg:text-4xl lg:before:translate-x-[70%] ${titleClassName}`}
     >
       {text}
     </h2>

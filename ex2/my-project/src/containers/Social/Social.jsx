@@ -1,9 +1,13 @@
+import Facebook from "../../components/SocialLinks/Facebook";
+import Instagram from "../../components/SocialLinks/Instagram";
+import Twitter from "../../components/SocialLinks/Twitter";
+
 const Social = () => {
   return (
-    <div className="hidden gap-x-2 justify-self-end text-white md:flex">
-      <a href="#">Fa</a>
-      <a href="#">Ins</a>
-      <a href="#">Tw</a>
+    <div className="hidden items-center gap-x-4 justify-self-end text-white md:flex">
+      <Facebook />
+      <Twitter />
+      <Instagram />
     </div>
   );
 };

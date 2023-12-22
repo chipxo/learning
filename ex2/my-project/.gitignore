@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+README.md
+.eslintcr.cjs
+tailwing.config.json
+.prettiecrc.json
+vite.config.json

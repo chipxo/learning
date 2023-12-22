@@ -1,21 +1,28 @@
+import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import Nav from "../containers/NavBar/NavBar";
+import links from "../containers/NavBar/nav.json";
+
 const Burger = () => {
+  const [burger, setBurger] = useState(false);
+
+  const whichBurger = burger ? faX : faBars;
+
+  const handleClick = () => {
+    setBurger(!burger);
+  };
+
   return (
-    <div className="justify-self-end md:hidden">
-      <svg
-        className="h-10 w-10 text-black dark:text-white"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 16 12"
-      >
-        <path
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M1 1h14M1 6h14M1 11h7"
-        />
-      </svg>
+    <div
+      className="grid place-items-end transition hover:cursor-pointer md:hidden"
+      onClick={handleClick}
+    >
+      <Nav links={links} isBurger={burger} />
+      <FontAwesomeIcon
+        icon={whichBurger}
+        className="relative z-[999] justify-self-end text-4xl text-white"
+      />
     </div>
   );
 };

@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply scroll-smooth;
+}
+
+#news {
+  div.swiper-pagination.swiper-pagination {
+    @apply flex justify-center gap-x-4;
+  }
+
+  span.swiper-pagination-bullet {
+    @apply border border-white bg-transparent opacity-100;
+  }
+
+  span.swiper-pagination-bullet-active {
+    @apply bg-white;
+  }
+
+  div.swiper-button-prev,
+  div.swiper-button-next {
+    @apply hidden rounded-full border px-5 text-white md:flex;
+    &::after {
+      @apply text-[14px];
+    }
+  }
+}
+
+#aboutUs {
+  div.swiper-pagination.swiper-pagination {
+    @apply flex flex-col justify-center gap-y-8;
+  }
+
+  span.swiper-pagination-bullet {
+    @apply border border-white bg-transparent opacity-100;
+  }
+
+  span.swiper-pagination-bullet-active {
+    @apply bg-white;
+  }
+}
