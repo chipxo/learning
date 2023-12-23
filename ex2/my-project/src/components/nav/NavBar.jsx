@@ -7,7 +7,13 @@ const Nav = ({ links, isBurger }) => {
 
   const showOnClick = isBurger
     ? "duration-500"
-    : "-translate-y-full duration-200";
+    : "-translate-y-full duration-300";
+
+  const navStyle = `${showOnClick} bg-header absolute left-0 top-0 grid h-screen w-full place-items-center bg-cover`;
+
+  const ulActive = "grid place-items-center gap-y-14";
+
+  const ulUnActive = "grid grid-cols-4 justify-items-center";
 
   const handleMouseEnter = (id) => {
     setHoveredLinkId(id);
@@ -28,18 +34,12 @@ const Nav = ({ links, isBurger }) => {
   return (
     <nav
       id="nav"
-      className={
-        window.innerWidth < 768
-          ? `${showOnClick} bg-header absolute left-0 top-0 grid h-screen w-full place-items-center bg-cover`
-          : "hidden md:block"
-      }
+      className={window.innerWidth < 768 ? navStyle : "hidden md:block"}
     >
       <ul
         className={`${
-          window.innerWidth < 768
-            ? "grid place-items-center gap-y-14 font-bold"
-            : "grid grid-cols-4 justify-items-center"
-        } pt-[4px] text-sm uppercase text-white`}
+          window.innerWidth < 768 ? ulActive : ulUnActive
+        } pt-[4px] text-sm font-bold uppercase text-white`}
       >
         {links.map(({ id, title, href }) => (
           <li key={id} className="relative lg:text-xl">

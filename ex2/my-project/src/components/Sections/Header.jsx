@@ -6,7 +6,7 @@ import links from "../nav/nav.json";
 import Social from "../socialBar/Social";
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState();
 
   useEffect(() => {
     const handleScroll = () => {

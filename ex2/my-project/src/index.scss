@@ -24,10 +24,6 @@
 }
 
 #aboutUs {
-  // div.swiper {
-  //   @apply mt-10;
-  // }
-
   div.swiper-pagination.swiper-pagination {
     @apply mt-4 flex flex-col justify-center gap-y-4 md:gap-y-8;
   }
@@ -109,6 +105,15 @@
       &:nth-of-type(5) {
         grid-area: img5;
       }
+    }
+  }
+}
+
+#footer {
+  form {
+    input.input {
+      border-bottom: 1px solid hsla(213, 33%, 26%, 1);
+      @apply focus:border-white;
     }
   }
 }
