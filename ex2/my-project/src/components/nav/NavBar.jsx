@@ -38,8 +38,8 @@ const Nav = ({ links, isBurger }) => {
         className={`${
           window.innerWidth < 768
             ? "grid place-items-center gap-y-14 font-bold"
-            : "grid grid-cols-4 justify-items-center "
-        } text-sm uppercase text-white`}
+            : "grid grid-cols-4 justify-items-center"
+        } pt-[4px] text-sm uppercase text-white`}
       >
         {links.map(({ id, title, href }) => (
           <li key={id} className="relative lg:text-xl">

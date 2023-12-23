@@ -5,7 +5,7 @@ const Twitter = () => {
   return (
     <a
       href="#"
-      className="rounded-full border border-gray-400 px-[8px] py-1 transition-all hover:border-white"
+      className="border-social-border rounded-full border px-[8px] py-1 transition-all hover:border-white"
     >
       <FontAwesomeIcon icon={faTwitter} />
     </a>

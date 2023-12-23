@@ -1,6 +1,6 @@
-import Facebook from "../../components/SocialLinks/Facebook";
-import Instagram from "../../components/SocialLinks/Instagram";
-import Twitter from "../../components/SocialLinks/Twitter";
+import Facebook from "../socialIcons/Facebook";
+import Instagram from "../socialIcons/Instagram";
+import Twitter from "../socialIcons/Twitter";
 
 const Social = () => {
   return (

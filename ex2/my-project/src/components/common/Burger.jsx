@@ -1,8 +1,8 @@
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import Nav from "../containers/NavBar/NavBar";
-import links from "../containers/NavBar/nav.json";
+import Nav from "../nav/NavBar";
+import links from "../nav/nav.json";
 
 const Burger = () => {
   const [burger, setBurger] = useState(false);

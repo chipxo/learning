@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import Nav from "../NavBar/NavBar";
-import links from "../NavBar/nav.json";
-import Social from "../Social/Social";
-import Burger from "/src/components/Burger";
-import Logo from "/src/components/Logo";
+import Logo from "../common//Logo";
+import Burger from "../common/Burger";
+import Nav from "../nav/NavBar";
+import links from "../nav/nav.json";
+import Social from "../socialBar/Social";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,13 +22,14 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed left-0 z-[999] w-full bg-cover bg-no-repeat py-3  transition-all ${
+      className={`fixed left-0 z-[999] w-full bg-cover bg-no-repeat py-3 font-[Source-Sans] transition-all 
+      ${
         isScrolled
-          ? "bg-news top-0 bg-cover bg-center shadow-2xl"
+          ? " to-light-blue from-mid-purple top-0 bg-gradient-to-br via-blue-500 shadow-2xl"
           : "top-0 md:top-4"
       }`}
     >
-      <div className="md:grid-cols-header container grid grid-cols-2 items-center gap-x-2 md:px-2">
+      <div className="md:grid-cols-header container grid grid-cols-2 items-center gap-x-5 md:px-2">
         <Logo />
         <Burger />
         {window.innerWidth > 768 ? (

@@ -1,10 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:ital@0;1&family=Source+Sans+3&display=swap");
 
 @layer base {
   * {
     @apply scroll-smooth;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-[Montserrat];
+  }
+
+  p {
+    @apply font-[Open-Sans];
+  }
+
+  .location {
+    @apply font-[Open-Sans] italic;
   }
 }
 
