@@ -22,31 +22,31 @@ export default () => {
       slidesPerView={1}
       pagination={{ clickable: true }}
     >
-      <SwiperSlide className="grid place-items-center">
+      <SwiperSlide className="grid place-items-center pr-2">
         <Slide
           title={"Simple & Modern"}
           description={"We make world beautiful every day"}
         />
       </SwiperSlide>
-      <SwiperSlide className="grid place-items-center">
+      <SwiperSlide className="grid place-items-center pr-2">
         <Slide
           title={"Simple & Modern"}
           description={"We make world beautiful every day"}
         />
       </SwiperSlide>
-      <SwiperSlide className="grid place-items-center">
+      <SwiperSlide className="grid place-items-center pr-2">
         <Slide
           title={"Simple & Modern"}
           description={"We make world beautiful every day"}
         />
       </SwiperSlide>
-      <SwiperSlide className="grid place-items-center">
+      <SwiperSlide className="grid place-items-center pr-2">
         <Slide
           title={"Simple & Modern"}
           description={"We make world beautiful every day"}
         />
       </SwiperSlide>
-      <SwiperSlide className="grid place-items-center">
+      <SwiperSlide className="grid place-items-center pr-2">
         <Slide
           title={"Simple & Modern"}
           description={"We make world beautiful every day"}

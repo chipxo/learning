@@ -5,7 +5,7 @@ const Instagram = () => {
   return (
     <a
       href="#"
-      className="border-social-border rounded-full border px-[8px] py-1 transition-all hover:border-white"
+      className="border-social-border rounded-full border px-[10px] pb-[4px] pt-[5px] transition-all hover:border-white"
     >
       <FontAwesomeIcon icon={faInstagram} />
     </a>

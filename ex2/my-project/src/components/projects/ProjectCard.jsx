@@ -15,18 +15,20 @@ const ProjectCard = ({
 }) => {
   const reversed = isNumber ? "md:flex-row-reverse" : "";
 
-  const bgPosition = isNumber ? "-right" : "-left";
+  const bgPosition = isNumber
+    ? "-right-[2rem] lg:-right-[3.8rem] xl:-right-[5.2rem]"
+    : "-left-[2rem] lg:-left-[3.8rem] xl:-left-[5.2rem]";
 
   const bgColor = isNumber ? "bg-mid-purple" : "bg-light-blue";
 
   return (
     <div
-      className={`flex flex-col justify-between gap-y-6 md:flex-row ${reversed} gap-x-[70px]`}
+      className={`flex flex-col justify-between gap-y-6 md:flex-row ${reversed} gap-x-[30px] lg:gap-x-[70px]`}
     >
-      <div className="relative ">
+      <div className="relative">
         <img src={image} alt={title} className="h-full w-full object-cover" />
         <div
-          className={`${bgPosition}-[2rem] lg:${bgPosition}-[4.2rem] xl:${bgPosition}-22 ${bgColor} absolute -top-10 -z-[10] hidden aspect-square w-[19rem] md:block  lg:aspect-[4/3] lg:w-[24rem] xl:-top-16 xl:w-[35rem]`}
+          className={`absolute ${bgColor} ${bgPosition} -top-10 -z-[10] hidden aspect-square w-[19rem]  md:block lg:aspect-[4/3] lg:w-[24rem] xl:-top-16 xl:w-[35rem]`}
         ></div>
       </div>
       <div className="grid items-center justify-items-start gap-y-4">
@@ -37,7 +39,7 @@ const ProjectCard = ({
         </div>
         <Button href={href} text={"More Details"} />
         <a href={href} className="location relative ml-6">
-          <span className="absolute -left-6 text-[15px]">
+          <span className="text-dark-blue absolute -left-6 text-[15px]">
             <FontAwesomeIcon icon={faLocationDot} />
           </span>
           {location}

@@ -25,7 +25,7 @@ const Header = () => {
       className={`fixed left-0 z-[999] w-full bg-cover bg-no-repeat py-3 font-[Source-Sans] transition-all 
       ${
         isScrolled
-          ? " to-light-blue from-mid-purple top-0 bg-gradient-to-br via-blue-500 shadow-2xl"
+          ? "to-light-blue from-mid-purple top-0 bg-gradient-to-br via-blue-500 shadow-2xl"
           : "top-0 md:top-4"
       }`}
     >

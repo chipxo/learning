@@ -1,3 +1,4 @@
+import Gallery from "./Sections/Gallery";
 import Header from "./Sections/Header";
 import LatestNews from "./Sections/LatestNews";
 import MaskGroup from "./Sections/MaskGroup";
@@ -11,6 +12,7 @@ const App = () => {
         <Header />
         <Projects />
         <LatestNews />
+        <Gallery />
       </main>
       <footer></footer>
     </>
