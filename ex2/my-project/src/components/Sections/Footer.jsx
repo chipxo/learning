@@ -5,56 +5,56 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
-// import { Formik } from "formik";
-import Button from "../common/Button";
+import { ErrorMessage, Field, Formik } from "formik";
 import Logo from "../common/Logo";
 import SectionsTitle from "../common/SectionsTitle";
 import Social from "../socialBar/Social";
 
-const Footer = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+const initialValues = {
+  userName: "",
+  email: "",
+};
 
-  function validateForm() {
-    // Check if the First Name is an Empty string or not.
+const validate = (values) => {
+  const errors = {};
 
-    if (name.length == 0) {
-      alert("Invalid Form, First Name can not be empty");
-      return;
-    }
-
-    // Check if the Email is an Empty string or not.
-
-    if (email.length == 0) {
-      alert("Invalid Form, Email Address can not be empty");
-      return;
-    }
-
-    // variable to count upper case characters in the password.
-    let countUpperCase = 0;
-    // variable to count lowercase characters in the password.
-    let countLowerCase = 0;
-    // variable to count digit characters in the password.
-    let countDigit = 0;
-    // variable to count special characters in the password.
-    let countSpecialCharacters = 0;
-
-    alert("Form is valid");
+  if (!values.userName) {
+    errors.userName = "Name is required";
+  } else if (values.userName.trim().length < 2) {
+    errors.userName = "Name must be at least 2 characters long";
   }
 
+  if (!values.email) {
+    errors.email = "Email is required";
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = "Invalid email address";
+  }
+
+  return errors;
+};
+
+const submitForm = (values, { setSubmitting, resetForm }) => {
+  setSubmitting(false);
+  resetForm();
+};
+
+const Footer = () => {
   return (
-    <div className="mx-auto grid max-w-[770px] gap-y-5 pb-[200px] pt-10">
-      <div className="relative -top-[10rem] bg-white px-12 py-16">
-        <div className="title">
+    <div className="mx-auto max-w-[770px] px-4 pb-[200px]">
+      <div className="relative -top-[10rem] bg-white px-4 py-10 shadow-2xl md:px-10 md:py-14 lg:px-12">
+        {/* TITLE */}
+
+        <div>
           <SectionsTitle
             isBgDark={false}
             isTitle={true}
             text={"Get in touch"}
           />
         </div>
-        <div className="grid grid-cols-2">
-          <div className="info grid gap-y-4 font-[Montserrat] text-[18px] text-black">
+        <div className="grid gap-y-6 md:grid-cols-2 ">
+          {/* LINKS */}
+
+          <div className="info grid justify-items-center gap-y-10 font-[Montserrat] text-[15px] text-black md:justify-items-start md:gap-y-4  md:text-[18px]">
             <a href="#" className="relative ml-6">
               <span className="text-mid-purple absolute -left-6 top-1 text-[15px]">
                 <FontAwesomeIcon icon={faLocationDot} />
@@ -80,50 +80,69 @@ const Footer = () => {
               From 07:05AM to 19:30PM
             </a>
           </div>
-          <form
-            action="#"
-            method="post"
-            className="grid gap-y-4 font-[Montserrat] text-black"
+          {/* FORM */}
+
+          <Formik
+            initialValues={initialValues}
+            validate={validate}
+            onSubmit={submitForm}
           >
-            <label htmlFor="userName">
-              <input
-                onChange={(e) => setName(e.target.value)}
-                name="userName"
-                id="userName"
-                type="text"
-                placeholder="Your name"
-                className="input input-primary w-full rounded-none border-none bg-white"
-              />
-            </label>
-            <label htmlFor="email">
-              <input
-                onChange={(e) => setEmail(e.target.value)}
-                name="email"
-                id="email"
-                type="email"
-                placeholder="Your email"
-                className="input input-primary w-full rounded-none border-none bg-white"
-              />
-            </label>
-            <div className="justify-self-end">
-              <Button
-                text={"Submit"}
-                onClick={() => {
-                  validateForm();
-                }}
-                href={"https://pornhub.com"}
-              />
-            </div>
-          </form>
+            {({ isValid, handleSubmit }) => (
+              <form
+                onSubmit={handleSubmit}
+                className="grid gap-y-8 font-[Montserrat] text-black"
+              >
+                <div className="relative">
+                  <Field
+                    type="text"
+                    placeholder="Your name"
+                    name="userName"
+                    className="input input-primary relative w-full rounded-none border-none bg-white"
+                  />
+                  <ErrorMessage
+                    name="userName"
+                    component="div"
+                    className="absolute top-12 text-red-600"
+                  />
+                </div>
+
+                <div className="relative">
+                  <Field
+                    type="text"
+                    placeholder="Your email"
+                    name="email"
+                    className="input input-primary relative w-full rounded-none border-none bg-white"
+                  />
+                  <ErrorMessage
+                    name="email"
+                    component="div"
+                    className="absolute top-12 text-red-600"
+                  />
+                </div>
+
+                <div>
+                  <button
+                    type="submit"
+                    disabled={!isValid}
+                    className="to-light-blue from-mid-purple border px-6 py-2 font-[Montserrat] uppercase transition-all hover:bg-gradient-to-br hover:text-white md:px-10 md:py-3"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            )}
+          </Formik>
         </div>
       </div>
-      <nav className="grid grid-cols-2 text-white">
+      {/* NAV */}
+
+      <nav className="flex flex-col-reverse items-center gap-y-6 text-white md:grid md:grid-cols-2">
         <div className="grid gap-y-10">
           <Logo href={"#aboutUs"} />
           <p className="font-[Montserrat]">Copyrights © 2020 Montichello</p>
         </div>
         <ul className="justify-self-end">
-          <Social />
+          <Social isHeader={false} />
         </ul>
       </nav>
     </div>

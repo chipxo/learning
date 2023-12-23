@@ -1,4 +1,3 @@
-import "animate.css";
 import { useState } from "react";
 
 const Nav = ({ links, isBurger }) => {

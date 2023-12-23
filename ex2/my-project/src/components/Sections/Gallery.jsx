@@ -71,35 +71,35 @@ const Gallery = (props) => {
         <div>
           <SectionsTitle isBgDark={false} isTitle={true} text={"Gallery"} />
         </div>
-        <div className="md:photos grid grid-cols-2 gap-1">
+        <div className="md:photos grid grid-cols-2 gap-3">
           <img
             src={img1}
-            className="hover:cursor-glass shadow-lg"
+            className="hover:cursor-glass mx-auto shadow-lg"
             alt="photo-1"
             data-fancybox="gallery"
           />
 
           <img
             src={img2}
-            className="hover:cursor-glass shadow-lg"
+            className="hover:cursor-glass mx-auto shadow-lg"
             alt="photo-2"
             data-fancybox="gallery"
           />
           <img
             src={img3}
-            className="hover:cursor-glass shadow-lg"
+            className="hover:cursor-glass mx-auto shadow-lg"
             alt="photo-3"
             data-fancybox="gallery"
           />
           <img
             src={img4}
-            className="hover:cursor-glass shadow-lg"
+            className="hover:cursor-glass mx-auto shadow-lg"
             alt="photo-4"
             data-fancybox="gallery"
           />
           <img
             src={img5}
-            className="hover:cursor-glass shadow-lg"
+            className="hover:cursor-glass mx-auto shadow-lg"
             alt="photo-5"
             data-fancybox="gallery"
           />

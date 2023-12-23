@@ -43,7 +43,7 @@
     @apply hidden;
   }
   div.swiper-button-next {
-    @apply right-[47%] top-[95vh] hidden rounded-full border px-5 text-white shadow-xl transition-all sm:flex md:right-[47.5%] lg:right-[48%];
+    @apply right-[47%] top-[90vh] hidden rounded-full border px-5 text-white shadow-xl transition-all sm:flex md:right-[47.5%] lg:right-[48%];
     &::after {
       @apply mr-[1px] rotate-90 text-[14px];
     }
