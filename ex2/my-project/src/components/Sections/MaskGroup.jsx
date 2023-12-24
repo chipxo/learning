@@ -4,7 +4,7 @@ const MaskGroup = () => {
   return (
     <section
       id="aboutUs"
-      className="bg-header bg-cover bg-center  pr-2 font-[Montserrat] sm:pr-10"
+      className="bg-header center bg-cover pr-2 font-[Montserrat] sm:pr-10"
     >
       <SliderHeader />
     </section>

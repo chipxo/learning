@@ -6,7 +6,7 @@ const Facebook = () => {
     <>
       <a
         href="#"
-        className="border-social-border rounded-full border px-[12px] py-1 transition-all hover:border-white"
+        className="border-social-border rounded-full border px-[12px] py-1 transition hover:scale-105 hover:border-white"
       >
         <FontAwesomeIcon icon={faFacebookF} />
       </a>

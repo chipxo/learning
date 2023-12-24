@@ -7,7 +7,7 @@ const Projects = () => {
     <section id="projects" className="my-24 scroll-mt-24">
       <div className="container grid gap-y-10 md:gap-y-12 lg:gap-y-24">
         <SectionsTitle text={"What we do"} isBgDark={false} isTitle={true} />
-        <div className="grid gap-y-6 md:gap-y-12 lg:gap-y-[140px]">
+        <div className="grid gap-y-20 lg:gap-y-[140px]">
           {cards.map(
             ({ id, subTitle, title, description, location, image, href }) => (
               <ProjectsCard

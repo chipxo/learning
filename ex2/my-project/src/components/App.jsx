@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Footer from "./Sections/Footer";
 import Gallery from "./Sections/Gallery";
 import Header from "./Sections/Header";
@@ -13,11 +14,15 @@ const App = () => {
         <MaskGroup />
         <Header />
         <Projects />
+        <motion.div style={{ originX: 0.5 }} />
         <LatestNews />
         <Gallery />
         <Map />
       </main>
-      <footer id="footer" className="bg-footer bg-cover bg-center">
+      <footer
+        id="footer"
+        className="bg-footer scroll-mt-[37vh] bg-cover bg-center md:scroll-mt-[50vh]"
+      >
         <Footer />
       </footer>
     </>

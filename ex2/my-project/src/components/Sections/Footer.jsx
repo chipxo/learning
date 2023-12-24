@@ -26,14 +26,16 @@ const validate = (values) => {
 
   if (!values.email) {
     errors.email = "Email is required";
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+  } else if (
+    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email.trim())
+  ) {
     errors.email = "Invalid email address";
   }
 
   return errors;
 };
 
-const submitForm = (values, { setSubmitting, resetForm }) => {
+const submitForm = ({ setSubmitting, resetForm }) => {
   setSubmitting(false);
   resetForm();
 };
@@ -41,7 +43,7 @@ const submitForm = (values, { setSubmitting, resetForm }) => {
 const Footer = () => {
   return (
     <div className="mx-auto max-w-[770px] px-4 pb-[200px]">
-      <div className="relative -top-[10rem] bg-white px-4 py-10 shadow-2xl md:px-10 md:py-14 lg:px-12">
+      <div className="relative -top-[10rem] bg-white px-4 py-10 md:px-10 md:py-14 lg:px-12">
         {/* TITLE */}
 
         <div>
@@ -51,34 +53,34 @@ const Footer = () => {
             text={"Get in touch"}
           />
         </div>
-        <div className="grid gap-y-6 md:grid-cols-2 ">
+        <div className="grid gap-y-6 md:grid-cols-2">
           {/* LINKS */}
 
           <div className="info grid justify-items-center gap-y-10 font-[Montserrat] text-[15px] text-black md:justify-items-start md:gap-y-4  md:text-[18px]">
-            <a href="#" className="relative ml-6">
+            <a href="https://google.com/maps" className="relative ml-6">
               <span className="text-mid-purple absolute -left-6 top-1 text-[15px]">
                 <FontAwesomeIcon icon={faLocationDot} />
               </span>
               91 Nolan Extensions Suite 670
             </a>
-            <a href="#" className="relative ml-6">
+            <a href="tel:+001356-868-2454" className="relative ml-6">
               <span className="text-mid-purple absolute -left-6 top-1 text-[15px]">
                 <FontAwesomeIcon icon={faPhone} />
               </span>
               +001 356-868-2454
             </a>
-            <a href="#" className="relative ml-6">
+            <a href="mailto:montichello@service.com" className="relative ml-6">
               <span className="text-mid-purple absolute -left-6 top-1 text-[15px]">
                 <FontAwesomeIcon icon={faInbox} />
               </span>
               montichello@service.com
             </a>
-            <a href="#" className="relative ml-6">
+            <p className="relative ml-6 font-[Montserrat]">
               <span className="text-mid-purple absolute -left-6 top-1 overflow-hidden text-[15px]">
                 <FontAwesomeIcon icon={faClock} />
               </span>
               From 07:05AM to 19:30PM
-            </a>
+            </p>
           </div>
           {/* FORM */}
 
@@ -97,7 +99,7 @@ const Footer = () => {
                     type="text"
                     placeholder="Your name"
                     name="userName"
-                    className="input input-primary relative w-full rounded-none border-none bg-white"
+                    className="input input-primary relative w-full rounded-none border-none bg-white transition duration-100 hover:scale-105"
                   />
                   <ErrorMessage
                     name="userName"
@@ -111,7 +113,7 @@ const Footer = () => {
                     type="text"
                     placeholder="Your email"
                     name="email"
-                    className="input input-primary relative w-full rounded-none border-none bg-white"
+                    className="input input-primary relative w-full rounded-none border-none bg-white transition duration-100 hover:scale-105"
                   />
                   <ErrorMessage
                     name="email"

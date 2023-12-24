@@ -113,7 +113,12 @@
   form {
     input.input {
       border-bottom: 1px solid hsla(213, 33%, 26%, 1);
-      @apply focus:border-white;
+      @apply focus:scale-110 focus:border-white;
     }
   }
+}
+
+.hide-me {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(138px, 1fr));
 }
