@@ -10,7 +10,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -22,14 +22,10 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed left-0 z-[999] w-full bg-cover bg-no-repeat py-3 font-[Source-Sans] transition-all 
-      ${
-        isScrolled
-          ? "bg-header top-0 bg-right-top shadow-2xl"
-          : "top-0 md:top-4"
-      }`}
+      className={`fixed left-0 top-0 z-[999] w-full bg-cover bg-no-repeat py-3 font-[Source-Sans] transition-all 
+      ${isScrolled ? "bg-header bg-right-top shadow-2xl" : "md:top-4"}`}
     >
-      <div className="md:grid-cols-header container grid grid-cols-2 items-center gap-x-5 md:px-2">
+      <div className="lg:grid-cols-header md:grid-cols-header-md container grid grid-cols-2 items-center gap-x-5 md:px-2">
         <Logo />
         <Burger />
         {window.innerWidth > 768 ? (

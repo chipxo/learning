@@ -1,5 +1,4 @@
 import SectionsTitle from "../common/SectionsTitle";
-import slides from "../sliderNews/mock.json";
 import { Slider } from "../sliderNews/Slider";
 
 const LatestNews = () => {
@@ -9,7 +8,7 @@ const LatestNews = () => {
         <div className="mb-10 lg:mb-20">
           <SectionsTitle text={"Latest News"} isBgDark={true} isTitle={true} />
         </div>
-        <Slider slides={slides} />
+        <Slider />
       </div>
     </section>
   );

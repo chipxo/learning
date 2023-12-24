@@ -10,9 +10,9 @@ const Nav = ({ links, isBurger }) => {
 
   const navStyle = `bg-news absolute left-0 top-0 grid h-screen w-full place-items-center bg-cover ${showOnClick}`;
 
-  const ulActive = "grid place-items-center gap-y-14";
+  const ulActive = "grid place-items-center gap-y-24 text-3xl font-bold";
 
-  const ulUnActive = "grid grid-cols-4 justify-items-center";
+  const ulUnActive = "grid grid-cols-4 justify-items-center text-sm";
 
   const handleMouseEnter = (id) => {
     setHoveredLinkId(id);
@@ -38,12 +38,12 @@ const Nav = ({ links, isBurger }) => {
       <ul
         className={`${
           window.innerWidth < 768 ? ulActive : ulUnActive
-        } pt-[4px] text-sm uppercase text-white`}
+        } pt-[4px] uppercase text-white`}
       >
         {links.map(({ id, title, href }) => (
           <li
             key={id}
-            className="relative transition hover:scale-105 lg:text-xl"
+            className="relative transition hover:scale-105 md:text-xl"
           >
             <a
               onClick={() => handleClick(id)}
@@ -53,7 +53,7 @@ const Nav = ({ links, isBurger }) => {
               className="relative inline-block"
             >
               <span
-                className={`absolute -left-[12px] top-[6px] h-[6px] w-[6px] rounded-full border lg:-left-[14px] lg:top-[11px] lg:h-[8px] lg:w-[8px] ${
+                className={`absolute -left-[12px] top-[6px] hidden h-[6px] w-[6px] rounded-full border md:-left-[14px] md:top-[11px] md:inline-block md:h-[8px] md:w-[8px] ${
                   id === activeLinkId || id === hoveredLinkId ? "bg-white" : ""
                 }`}
               ></span>

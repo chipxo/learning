@@ -76,7 +76,7 @@ const Gallery = (props) => {
             <div
               className={`hide-me animate__animated animate__fadeInDown w-full gap-3 duration-200`}
             >
-              {[...images, ...images].map(({ id, src }) => (
+              {[...images, ...images, ...images].map(({ id, src }) => (
                 <img
                   key={id}
                   src={src}

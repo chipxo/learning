@@ -3,7 +3,7 @@ import Instagram from "../socialIcons/Instagram";
 import Twitter from "../socialIcons/Twitter";
 
 const Social = ({ isHeader }) => {
-  const display = isHeader ? "hidden md:flex" : "flex";
+  const display = isHeader ? "hidden lg:flex" : "flex";
 
   return (
     <div
