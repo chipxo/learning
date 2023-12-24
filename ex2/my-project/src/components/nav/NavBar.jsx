@@ -43,7 +43,7 @@ const Nav = ({ links, isBurger }) => {
         {links.map(({ id, title, href }) => (
           <li
             key={id}
-            className="relative transition-all hover:scale-105 lg:text-xl"
+            className="relative transition hover:scale-105 lg:text-xl"
           >
             <a
               onClick={() => handleClick(id)}

@@ -4,6 +4,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:ital@0;1&family=Source+Sans+3&display=swap");
 
 @layer base {
+  ::-webkit-scrollbar {
+    @apply w-[15px];
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply hover:bg-dark-blue bg-mid-purple rounded-sm;
+  }
+
   * {
     @apply scroll-smooth;
   }

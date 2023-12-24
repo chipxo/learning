@@ -1,4 +1,4 @@
-import SliderHeader from "../sliderHeader/SliderHeader";
+import SliderMaskGroup from "../sliderMaskGroup/SliderMaskGroup";
 
 const MaskGroup = () => {
   return (
@@ -6,7 +6,7 @@ const MaskGroup = () => {
       id="aboutUs"
       className="bg-header center bg-cover pr-2 font-[Montserrat] sm:pr-10"
     >
-      <SliderHeader />
+      <SliderMaskGroup />
     </section>
   );
 };
