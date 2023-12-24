@@ -4,8 +4,9 @@ import "swiper/css/pagination";
 import { A11y, Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Card from "./Card";
+import slides from "./slides.json";
 
-export const Slider = ({ slides }) => {
+export const Slider = () => {
   return (
     <>
       <Swiper

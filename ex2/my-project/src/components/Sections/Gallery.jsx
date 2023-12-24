@@ -6,6 +6,29 @@ import SectionsTitle from "../common/SectionsTitle";
 import { Fancybox as NativeFancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
+const images = [
+  {
+    id: 1,
+    src: "/gallery_img/gallery_1.png",
+  },
+  {
+    id: 2,
+    src: "/gallery_img/gallery_2.png",
+  },
+  {
+    id: 3,
+    src: "/gallery_img/gallery_3.png",
+  },
+  {
+    id: 4,
+    src: "/gallery_img/gallery_4.png",
+  },
+  {
+    id: 5,
+    src: "/gallery_img/gallery_5.png",
+  },
+];
+
 const Gallery = (props) => {
   const [hiddenImg, setHiddenImg] = useState(false);
 
@@ -38,48 +61,30 @@ const Gallery = (props) => {
           <SectionsTitle isBgDark={false} isTitle={true} text={"Gallery"} />
         </div>
         <div className="md:photos relative z-[888] grid gap-3 ">
-          {Array.from({ length: 5 }, (_, i) => {
-            const imagePath = `/gallery_img/gallery_${i + 1}.png`;
-            return (
-              <img
-                key={i}
-                src={imagePath}
-                className="hover:cursor-glass w-full shadow-lg sm:max-w-full"
-                alt={`photo-${i + 1}`}
-                data-fancybox="gallery"
-              />
-            );
-          })}
+          {images.map(({ id, src }) => (
+            <img
+              key={id}
+              src={src}
+              className="hover:cursor-glass w-full shadow-lg sm:max-w-full"
+              alt={`img-${id}`}
+              data-fancybox="gallery"
+            />
+          ))}
         </div>
         <div className="relative -top-10 ">
           {hiddenImg && (
             <div
               className={`hide-me animate__animated animate__fadeInDown w-full gap-3 duration-200`}
             >
-              {Array.from({ length: 5 }, (_, i) => {
-                const imagePath = `/gallery_img/gallery_${i + 1}.png`;
-                return (
-                  <img
-                    key={i}
-                    src={imagePath}
-                    className="hover:cursor-glass w-full shadow-lg sm:max-w-full"
-                    alt={`photo-${i + 1}`}
-                    data-fancybox="gallery"
-                  />
-                );
-              })}
-              {Array.from({ length: 5 }, (_, i) => {
-                const imagePath = `/gallery_img/gallery_${i + 1}.png`;
-                return (
-                  <img
-                    key={i}
-                    src={imagePath}
-                    className="hover:cursor-glass w-full shadow-lg sm:max-w-full"
-                    alt={`photo-${i + 1}`}
-                    data-fancybox="gallery"
-                  />
-                );
-              })}
+              {[...images, ...images].map(({ id, src }) => (
+                <img
+                  key={id}
+                  src={src}
+                  className="hover:cursor-glass w-full shadow-lg sm:max-w-full"
+                  alt={`img-${id}`}
+                  data-fancybox="gallery"
+                />
+              ))}
             </div>
           )}
         </div>

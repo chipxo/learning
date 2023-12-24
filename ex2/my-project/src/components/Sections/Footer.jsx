@@ -40,6 +40,27 @@ const submitForm = ({ setSubmitting, resetForm }) => {
   resetForm();
 };
 
+let userMap = [
+  {
+    id: 1,
+    icon: faLocationDot,
+    text: "91 Nolan Extensions Suite 670",
+    link: "https://google.com/maps",
+  },
+  {
+    id: 2,
+    icon: faPhone,
+    text: "+001 356-868-2454",
+    link: "tel:+001356-868-2454 ",
+  },
+  {
+    id: 3,
+    icon: faInbox,
+    text: "montichello@service.com",
+    link: "mailto:montichello@service.com",
+  },
+];
+
 const Footer = () => {
   return (
     <footer
@@ -61,27 +82,14 @@ const Footer = () => {
             {/* LINKS */}
 
             <div className="info grid justify-items-center gap-y-10 font-[Montserrat] text-[15px] text-black md:justify-items-start md:gap-y-4  md:text-[18px]">
-              <a href="https://google.com/maps" className="relative ml-6">
-                <span className="text-mid-purple absolute -left-6 top-1 text-[15px]">
-                  <FontAwesomeIcon icon={faLocationDot} />
-                </span>
-                91 Nolan Extensions Suite 670
-              </a>
-              <a href="tel:+001356-868-2454" className="relative ml-6">
-                <span className="text-mid-purple absolute -left-6 top-1 text-[15px]">
-                  <FontAwesomeIcon icon={faPhone} />
-                </span>
-                +001 356-868-2454
-              </a>
-              <a
-                href="mailto:montichello@service.com"
-                className="relative ml-6"
-              >
-                <span className="text-mid-purple absolute -left-6 top-1 text-[15px]">
-                  <FontAwesomeIcon icon={faInbox} />
-                </span>
-                montichello@service.com
-              </a>
+              {userMap.map(({ id, icon, text, link }) => (
+                <a key={id} href={link} className="relative ml-6">
+                  <span className="text-mid-purple absolute -left-6 top-1 overflow-hidden text-[15px]">
+                    <FontAwesomeIcon icon={icon} />
+                  </span>
+                  {text}
+                </a>
+              ))}
               <p className="relative ml-6 font-[Montserrat]">
                 <span className="text-mid-purple absolute -left-6 top-1 overflow-hidden text-[15px]">
                   <FontAwesomeIcon icon={faClock} />
