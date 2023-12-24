@@ -1,12 +1,6 @@
 import Button from "../common/Button";
 import SectionsTitle from "../common/SectionsTitle";
 
-import img1 from "/gallery_img/gallery_1.png";
-import img2 from "/gallery_img/gallery_2.png";
-import img3 from "/gallery_img/gallery_3.png";
-import img4 from "/gallery_img/gallery_4.png";
-import img5 from "/gallery_img/gallery_5.png";
-
 import { useEffect, useRef, useState } from "react";
 
 import { Fancybox as NativeFancybox } from "@fancyapps/ui";
@@ -42,99 +36,45 @@ const Gallery = (props) => {
           <SectionsTitle isBgDark={false} isTitle={true} text={"Gallery"} />
         </div>
         <div className="md:photos relative z-[888] grid gap-3 ">
-          <img
-            src={img1}
-            className="hover:cursor-glass w-full  shadow-lg sm:max-w-full"
-            alt="photo-1"
-            data-fancybox="gallery"
-          />
-          <img
-            src={img2}
-            className="hover:cursor-glass w-full shadow-lg"
-            alt="photo-2"
-            data-fancybox="gallery"
-          />
-          <img
-            src={img3}
-            className="hover:cursor-glass w-full shadow-lg"
-            alt="photo-3"
-            data-fancybox="gallery"
-          />
-          <img
-            src={img4}
-            className="hover:cursor-glass w-full shadow-lg"
-            alt="photo-4"
-            data-fancybox="gallery"
-          />
-          <img
-            src={img5}
-            className="hover:cursor-glass w-full shadow-lg"
-            alt="photo-5"
-            data-fancybox="gallery"
-          />
+          {Array.from({ length: 5 }, (_, i) => {
+            const imagePath = `/gallery_img/gallery_${i + 1}.png`;
+            return (
+              <img
+                key={i}
+                src={imagePath}
+                className="hover:cursor-glass w-full shadow-lg sm:max-w-full"
+                alt={`photo-${i + 1}`}
+                data-fancybox="gallery"
+              />
+            );
+          })}
         </div>
         <div className="relative -top-10 ">
           <div className={`hide-me gap-3 ${hiddenImg}`}>
-            <img
-              src={img2}
-              className="hover:cursor-glass shadow-lg"
-              alt="photo-2"
-              data-fancybox="gallery"
-            />
-            <img
-              src={img3}
-              className="hover:cursor-glass shadow-lg"
-              alt="photo-3"
-              data-fancybox="gallery"
-            />
-            <img
-              src={img4}
-              className="hover:cursor-glass shadow-lg"
-              alt="photo-4"
-              data-fancybox="gallery"
-            />
-            <img
-              src={img5}
-              className="hover:cursor-glass shadow-lg"
-              alt="photo-5"
-              data-fancybox="gallery"
-            />
-            <img
-              src={img5}
-              className="hover:cursor-glass shadow-lg"
-              alt="photo-2"
-              data-fancybox="gallery"
-            />
-            <img
-              src={img3}
-              className="hover:cursor-glass shadow-lg"
-              alt="photo-2"
-              data-fancybox="gallery"
-            />
-            <img
-              src={img2}
-              className="hover:cursor-glass shadow-lg"
-              alt="photo-3"
-              data-fancybox="gallery"
-            />
-            <img
-              src={img2}
-              className="hover:cursor-glass shadow-lg"
-              alt="photo-4"
-              data-fancybox="gallery"
-            />
-            <img
-              src={img4}
-              className="hover:cursor-glass shadow-lg"
-              alt="photo-5"
-              data-fancybox="gallery"
-            />
-            <img
-              src={img5}
-              className="hover:cursor-glass shadow-lg"
-              alt="photo-5"
-              data-fancybox="gallery"
-            />
+            {Array.from({ length: 5 }, (_, i) => {
+              const imagePath = `/gallery_img/gallery_${i + 1}.png`;
+              return (
+                <img
+                  key={i}
+                  src={imagePath}
+                  className="hover:cursor-glass w-full shadow-lg sm:max-w-full"
+                  alt={`photo-${i + 1}`}
+                  data-fancybox="gallery"
+                />
+              );
+            })}
+            {Array.from({ length: 5 }, (_, i) => {
+              const imagePath = `/gallery_img/gallery_${i + 1}.png`;
+              return (
+                <img
+                  key={i}
+                  src={imagePath}
+                  className="hover:cursor-glass w-full shadow-lg sm:max-w-full"
+                  alt={`photo-${i + 1}`}
+                  data-fancybox="gallery"
+                />
+              );
+            })}
           </div>
         </div>
         <Button
