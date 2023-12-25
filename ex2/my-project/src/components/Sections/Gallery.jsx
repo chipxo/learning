@@ -50,10 +50,6 @@ const Gallery = (props) => {
     };
   }, [props.delegate, props.options]);
 
-  const handleClick = () => {
-    setHiddenImg(!hiddenImg);
-  };
-
   return (
     <section ref={containerRef} id="gallery" className="relative mt-20">
       <div className="container grid gap-y-12 text-center">
@@ -65,22 +61,22 @@ const Gallery = (props) => {
             <img
               key={id}
               src={src}
-              className="hover:cursor-glass w-full shadow-lg sm:max-w-full"
+              className="hover:cursor-glass w-full shadow-lg transition hover:scale-95 sm:max-w-full"
               alt={`img-${id}`}
               data-fancybox="gallery"
             />
           ))}
         </div>
-        <div className="relative -top-10 ">
+        <div className="relative ">
           {hiddenImg && (
             <div
-              className={`hide-me animate__animated animate__fadeInDown w-full gap-3 duration-200`}
+              className={`grid-cols-gallery-min animate__animated animate__fadeInDown grid gap-3 duration-200`}
             >
-              {[...images, ...images, ...images].map(({ id, src }) => (
+              {[...images, ...images].map(({ id, src }, index) => (
                 <img
-                  key={id}
+                  key={`${id} + ${index}`}
                   src={src}
-                  className="hover:cursor-glass w-full shadow-lg sm:max-w-full"
+                  className="hover:cursor-glass w-full transition hover:scale-105 sm:max-w-full"
                   alt={`img-${id}`}
                   data-fancybox="gallery"
                 />
@@ -91,7 +87,7 @@ const Gallery = (props) => {
         <Button
           text={`See ${buttonText}`}
           buttonText={buttonText}
-          onClick={handleClick}
+          onClick={() => setHiddenImg(!hiddenImg)}
         />
       </div>
     </section>

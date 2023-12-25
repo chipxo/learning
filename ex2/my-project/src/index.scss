@@ -51,7 +51,7 @@
     @apply hidden;
   }
   div.swiper-button-next {
-    @apply right-[47%] top-[90vh] hidden rounded-full border px-5 text-white shadow-xl transition-all sm:flex md:right-[47.5%] lg:right-[48%];
+    @apply left-6 right-0 top-[90vh] mx-auto flex rounded-full border px-5 text-white shadow-xl transition-all;
     &::after {
       @apply mr-[1px] rotate-90 text-[14px];
     }
@@ -126,7 +126,7 @@
   }
 }
 
-.hide-me {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(138px, 1fr));
-}
+// .hide-me {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(138px, 1fr));
+// }

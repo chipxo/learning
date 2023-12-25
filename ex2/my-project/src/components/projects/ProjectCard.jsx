@@ -21,82 +21,57 @@ const ProjectCard = ({
 
   const isReversed = isNumber ? "md:flex-row-reverse" : "md:flex-row";
 
-  const rightPosition = "-right-[2rem] lg:-right-[3.8rem] xl:-right-[5.2rem]";
-  const leftPosition = "-left-[2rem] lg:-left-[3.8rem] xl:-left-[5.2rem]";
+  const rightPosition =
+    "-right-[22rem] lg:-right-[26rem] xl:-right-[30rem] 2xl:-right-[38rem]";
+  const leftPosition =
+    "-left-[22rem] lg:-left-[26rem] xl:-left-[30rem] 2xl:-left-[38rem]";
 
-  const bgPosition = isNumber ? rightPosition : leftPosition;
+  const bgPositionAndColor = isNumber
+    ? `bg-mid-purple ${rightPosition}`
+    : `bg-light-blue ${leftPosition}`;
 
-  const bgColor = isNumber ? "bg-mid-purple" : "bg-light-blue";
-
-  const pos = isNumber ? "Left" : "Right";
-
-  const handleClick = () => {
-    setDetails(!details);
-    setbuttonText(buttonText === "more" ? "less" : "more");
-  };
+  const posAnimation = isNumber ? "Left" : "Right";
 
   return (
-    <>
-      <div
-        className={`flex flex-col justify-between gap-x-[30px] gap-y-6 lg:gap-x-[70px] ${isReversed}`}
-      >
-        <div className="relative">
-          <img src={image} alt={title} className="w-full object-cover" />
-          <div
-            className={`absolute -top-10 -z-[10] hidden aspect-square w-[19rem] md:block lg:aspect-[4/3] lg:w-[24rem] xl:-top-16 xl:w-[35rem] ${bgPosition} ${bgColor}`}
-          ></div>
-        </div>
-        <div className="grid items-center justify-items-start gap-y-4">
-          <div className="grid gap-y-6">
-            <h3 className="-mb-6 text-sm uppercase lg:text-[22px]">
-              {subTitle}
-            </h3>
-            <SectionsTitle text={title} isBgDark={false} isTitle={false} />
-            <p className="w-full max-w-[470px]">{description}</p>
-            <div className="relative">
-              {details && (
-                <p
-                  className={`animate__animated w-full max-w-[470px] animate__slideIn${pos} opacity-1 relative duration-500`}
-                >
-                  {description}
-                  {description}
-                  {description}
-                  {description}
-                </p>
-              )}
-            </div>
+    <div
+      className={`flex flex-col justify-between gap-x-[30px] gap-y-6 lg:gap-x-[70px] ${isReversed}`}
+    >
+      <div className="relative">
+        <img src={image} alt={title} className="w-full object-cover" />
+        <div
+          className={`absolute -top-7 -z-[10] hidden h-72 w-[30rem] md:block lg:-top-12 lg:aspect-video lg:h-auto lg:w-[38rem] xl:-top-16 xl:w-[48rem] 2xl:w-[56rem] ${bgPositionAndColor}`}
+        ></div>
+      </div>
+      <div className="grid items-center justify-items-start gap-y-4">
+        <div className="grid gap-y-6">
+          <h3 className="-mb-6 text-sm uppercase lg:text-[22px]">{subTitle}</h3>
+          <SectionsTitle text={title} isBgDark={false} isTitle={false} />
+          <p className="w-full max-w-[470px]">{description}</p>
+          <div className="">
+            {details && (
+              <p
+                className={`animate__animated w-full max-w-[470px] animate__slideIn${posAnimation} duration-500`}
+              >
+                {description}
+                {description}
+                {description}
+              </p>
+            )}
           </div>
-          <Button
-            onClick={handleClick}
-            text={`${buttonText} details`}
-            buttonText={buttonText}
-          />
-          <a href={href} className="location relative ml-6">
-            <span className="text-dark-blue absolute -left-6 text-[15px]">
-              <FontAwesomeIcon icon={faLocationDot} />
-            </span>
-            {location}
-          </a>
         </div>
+        <Button
+          onClick={() => setDetails(!details)}
+          text={`${buttonText} details`}
+          buttonText={buttonText}
+        />
+        <a href={href} className="location relative ml-6">
+          <span className="text-dark-blue absolute -left-6 text-[15px]">
+            <FontAwesomeIcon icon={faLocationDot} />
+          </span>
+          {location}
+        </a>
       </div>
-      {/* <div className="relative">
-        {showComponent && (
-          <p
-            className={`animate__animated w-full max-w-[470px] animate__slideIn${pos} opacity-1 relative duration-500`}
-          >
-            {description}
-            {description}
-            {description}
-            {description}
-          </p>
-        )}
-      </div>
-      <Button
-        onClick={toggleVisibility}
-        text={`${buttonText} details`}
-        buttonText={buttonText}
-      /> */}
-    </>
+    </div>
   );
 };
 
