@@ -69,8 +69,7 @@ const Footer = () => {
     >
       <div className="mx-auto max-w-[770px] px-4 pb-[200px]">
         <div className="relative -top-[10rem] bg-white px-4 py-10 md:px-10 md:py-14 lg:px-12">
-          {/* TITLE */}
-
+          {/* Title */}
           <div>
             <SectionsTitle
               isBgDark={false}
@@ -79,26 +78,25 @@ const Footer = () => {
             />
           </div>
           <div className="grid gap-y-6 md:grid-cols-2">
-            {/* LINKS */}
-
+            {/* Links */}
             <div className="info grid justify-items-center gap-y-10 font-[Montserrat] text-[15px] text-black md:justify-items-start md:gap-y-4  md:text-[18px]">
               {userMap.map(({ id, icon, text, link }) => (
                 <a key={id} href={link} className="relative ml-6">
-                  <span className="text-mid-purple absolute -left-6 top-1 overflow-hidden text-[15px]">
+                  <span className="text-mid-purple absolute -left-6 top-[1px] overflow-hidden text-[15px] md:top-[2px]">
                     <FontAwesomeIcon icon={icon} />
                   </span>
                   {text}
                 </a>
               ))}
               <p className="relative ml-6 font-[Montserrat]">
-                <span className="text-mid-purple absolute -left-6 top-1 overflow-hidden text-[15px]">
+                <span className="text-mid-purple absolute -left-6 top-[1px] overflow-hidden text-[15px] md:top-[2px]">
                   <FontAwesomeIcon icon={faClock} />
                 </span>
                 From 07:05AM to 19:30PM
               </p>
             </div>
-            {/* FORM */}
 
+            {/* Form */}
             <Formik
               initialValues={initialValues}
               validate={validate}
@@ -136,7 +134,6 @@ const Footer = () => {
                       className="absolute top-12 text-red-600"
                     />
                   </div>
-
                   <div>
                     <button
                       type="submit"
@@ -151,8 +148,8 @@ const Footer = () => {
             </Formik>
           </div>
         </div>
-        {/* NAV */}
 
+        {/* Nav */}
         <nav className="flex flex-col-reverse items-center gap-y-6 text-white md:grid md:grid-cols-2">
           <div className="grid gap-y-10">
             <Logo href={"#aboutUs"} />

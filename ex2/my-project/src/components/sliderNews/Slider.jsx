@@ -11,19 +11,16 @@ export const Slider = () => {
     <>
       <Swiper
         modules={[Autoplay, Navigation, Pagination, A11y]}
-        spaceBetween={2}
+        spaceBetween={0}
         breakpoints={{
           320: {
             slidesPerView: 1,
-            spaceBetween: 2,
           },
           1020: {
             slidesPerView: 2,
-            spaceBetween: 2,
           },
           1530: {
             slidesPerView: 3,
-            spaceBetween: 2,
           },
         }}
         autoplay={{

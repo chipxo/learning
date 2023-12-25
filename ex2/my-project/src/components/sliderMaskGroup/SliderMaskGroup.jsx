@@ -6,10 +6,19 @@ import { A11y, Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Slide from "./Slide";
 
+const slider = [
+  {
+    id: 1,
+    className: "grid place-items-center pr-2",
+    title: "Simple & Modern",
+    description: "We make world beautiful every day",
+  },
+];
+
 export default () => {
   return (
     <Swiper
-      className="md:min-h-dvh container h-[50vh]"
+      className="md:h-dvh container h-[50dvh]"
       modules={[Autoplay, Navigation, Pagination, A11y]}
       direction={"vertical"}
       loop={true}
@@ -22,36 +31,13 @@ export default () => {
       slidesPerView={1}
       pagination={{ clickable: true }}
     >
-      <SwiperSlide className="grid place-items-center pr-2">
-        <Slide
-          title={"Simple & Modern"}
-          description={"We make world beautiful every day"}
-        />
-      </SwiperSlide>
-      <SwiperSlide className="grid place-items-center pr-2">
-        <Slide
-          title={"Simple & Modern"}
-          description={"We make world beautiful every day"}
-        />
-      </SwiperSlide>
-      <SwiperSlide className="grid place-items-center pr-2">
-        <Slide
-          title={"Simple & Modern"}
-          description={"We make world beautiful every day"}
-        />
-      </SwiperSlide>
-      <SwiperSlide className="grid place-items-center pr-2">
-        <Slide
-          title={"Simple & Modern"}
-          description={"We make world beautiful every day"}
-        />
-      </SwiperSlide>
-      <SwiperSlide className="grid place-items-center pr-2">
-        <Slide
-          title={"Simple & Modern"}
-          description={"We make world beautiful every day"}
-        />
-      </SwiperSlide>
+      {[...slider, ...slider, ...slider, ...slider, ...slider].map(
+        ({ id, className, title, description }, index) => (
+          <SwiperSlide key={id + index} className={className}>
+            <Slide title={title} description={description}></Slide>
+          </SwiperSlide>
+        ),
+      )}
     </Swiper>
   );
 };

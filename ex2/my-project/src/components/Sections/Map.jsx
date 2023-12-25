@@ -3,6 +3,7 @@ import { GoogleMap, MarkerF, useJsApiLoader } from "@react-google-maps/api";
 const center = { lat: 41.12118893425201, lng: -73.43283741633479 };
 const googleMapsApiKey = "AIzaSyBUstuBUHe-HtvTtI1mL57p9dKzsOSzcgo";
 
+// Map style
 const silverMapStyle = [
   {
     elementType: "geometry",

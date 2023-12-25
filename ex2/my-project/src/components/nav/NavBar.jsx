@@ -52,6 +52,7 @@ const Nav = ({ links, isBurger }) => {
               href={href}
               className="relative inline-block"
             >
+              {/* Before Marker */}
               <span
                 className={`absolute -left-[12px] top-[6px] hidden h-[6px] w-[6px] rounded-full border md:-left-[14px] md:top-[11px] md:inline-block md:h-[8px] md:w-[8px] ${
                   id === activeLinkId || id === hoveredLinkId ? "bg-white" : ""

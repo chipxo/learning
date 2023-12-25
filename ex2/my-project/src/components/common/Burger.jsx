@@ -7,20 +7,17 @@ import links from "../nav/nav.json";
 const Burger = () => {
   const [burger, setBurger] = useState(false);
 
-  const whichBurger = burger ? faX : faBars;
-
-  // const handleClick = () => {
-  //   setBurger(!burger);
-  // };
-
   return (
     <div
       className="grid place-items-end transition hover:cursor-pointer md:hidden"
       onClick={() => setBurger(!burger)}
     >
+      {/* Nav*/}
       <Nav links={links} isBurger={burger} />
+
+      {/* Burger */}
       <FontAwesomeIcon
-        icon={whichBurger}
+        icon={burger ? faX : faBars}
         className="relative z-[999] justify-self-end text-6xl text-white"
       />
     </div>

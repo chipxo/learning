@@ -6,28 +6,9 @@ import SectionsTitle from "../common/SectionsTitle";
 import { Fancybox as NativeFancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
-const images = [
-  {
-    id: 1,
-    src: "/gallery_img/gallery_1.png",
-  },
-  {
-    id: 2,
-    src: "/gallery_img/gallery_2.png",
-  },
-  {
-    id: 3,
-    src: "/gallery_img/gallery_3.png",
-  },
-  {
-    id: 4,
-    src: "/gallery_img/gallery_4.png",
-  },
-  {
-    id: 5,
-    src: "/gallery_img/gallery_5.png",
-  },
-];
+const img = [1, 2, 3, 4, 5];
+
+const imgHidden = [3, 4, 1, 5, 2];
 
 const Gallery = (props) => {
   const [hiddenImg, setHiddenImg] = useState(false);
@@ -54,29 +35,32 @@ const Gallery = (props) => {
     <section ref={containerRef} id="gallery" className="relative mt-20">
       <div className="container grid gap-y-12 text-center">
         <div>
+          {/* Title */}
           <SectionsTitle isBgDark={false} isTitle={true} text={"Gallery"} />
         </div>
         <div className="md:photos relative z-[888] grid gap-3 ">
-          {images.map(({ id, src }) => (
+          {/* img */}
+          {img.map((id) => (
             <img
-              key={id}
-              src={src}
+              key={`${id}`}
+              src={`/gallery_img/gallery_${id}.png`}
               className="hover:cursor-glass w-full shadow-lg transition hover:scale-95 sm:max-w-full"
               alt={`img-${id}`}
               data-fancybox="gallery"
             />
           ))}
         </div>
-        <div className="relative ">
+        <div className="relative">
+          {/* Hidden img */}
           {hiddenImg && (
             <div
               className={`grid-cols-gallery-min animate__animated animate__fadeInDown grid gap-3 duration-200`}
             >
-              {[...images, ...images].map(({ id, src }, index) => (
+              {[...imgHidden, ...img, ...imgHidden].map((id) => (
                 <img
-                  key={`${id} + ${index}`}
-                  src={src}
-                  className="hover:cursor-glass w-full transition hover:scale-105 sm:max-w-full"
+                  key={`${id}_${Math.floor(Math.random() * 100)}`}
+                  src={`/gallery_img/gallery_${id}.png`}
+                  className="hover:cursor-glass w-full shadow-lg transition hover:scale-95 sm:max-w-full"
                   alt={`img-${id}`}
                   data-fancybox="gallery"
                 />
