@@ -6,7 +6,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative my-24 scroll-mt-24 overflow-hidden"
+      className="relative my-24 scroll-mt-24 overflow-clip pt-4"
     >
       <div className="container grid gap-y-10 md:gap-y-12 lg:gap-y-24">
         <SectionsTitle text={"What we do"} isBgDark={false} isTitle={true} />

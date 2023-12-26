@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Nav = ({ links, isBurger }) => {
-  const [activeLinkId, setActiveLinkId] = useState(null);
-  const [hoveredLinkId, setHoveredLinkId] = useState(null);
+  const [activeLinkId, setActiveLinkId] = useState(
+    links.length > 0 ? links[0].id : null,
+  );
 
   const showOnClick = isBurger
     ? "duration-500"
@@ -10,25 +11,40 @@ const Nav = ({ links, isBurger }) => {
 
   const navStyle = `bg-news absolute left-0 top-0 grid h-screen w-full place-items-center bg-cover ${showOnClick}`;
 
-  const ulActive = "grid place-items-center gap-y-24 text-3xl font-bold";
+  const ulBurger = "grid place-items-center gap-y-24 text-3xl font-bold";
 
-  const ulUnActive = "grid grid-cols-4 justify-items-center text-sm";
+  const ulHeader = "grid grid-cols-4 justify-items-center text-sm";
 
-  const handleMouseEnter = (id) => {
-    setHoveredLinkId(id);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
 
-  const handleMouseLeave = () => {
-    setHoveredLinkId(null);
-  };
+      let isSectionView = false;
 
-  const handleClick = (id) => {
-    setActiveLinkId(id);
+      links.forEach(({ id, href }) => {
+        const targetSection = document.getElementById(href.substring(1));
+        if (
+          targetSection &&
+          scrollPosition >= targetSection.offsetTop - 450 &&
+          scrollPosition <
+            targetSection.offsetTop - 450 + targetSection.offsetHeight
+        ) {
+          setActiveLinkId(id);
+          isSectionView = true;
+        }
+      });
 
-    setTimeout(() => {
-      setActiveLinkId(null);
-    }, 1000);
-  };
+      if (!isSectionView) {
+        setActiveLinkId(null);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [links]);
 
   return (
     <nav
@@ -37,7 +53,7 @@ const Nav = ({ links, isBurger }) => {
     >
       <ul
         className={`${
-          window.innerWidth < 768 ? ulActive : ulUnActive
+          window.innerWidth < 768 ? ulBurger : ulHeader
         } pt-[4px] uppercase text-white`}
       >
         {links.map(({ id, title, href }) => (
@@ -46,18 +62,9 @@ const Nav = ({ links, isBurger }) => {
             className="relative transition hover:scale-105 md:text-xl"
           >
             <a
-              onClick={() => handleClick(id)}
-              onMouseEnter={() => handleMouseEnter(id)}
-              onMouseLeave={handleMouseLeave}
               href={href}
-              className="relative inline-block"
+              className={`relative ${activeLinkId === id ? "active" : ""}`}
             >
-              {/* Before Marker */}
-              <span
-                className={`absolute -left-[12px] top-[6px] hidden h-[6px] w-[6px] rounded-full border md:-left-[14px] md:top-[11px] md:inline-block md:h-[8px] md:w-[8px] ${
-                  id === activeLinkId || id === hoveredLinkId ? "bg-white" : ""
-                }`}
-              ></span>
               {title}
             </a>
           </li>

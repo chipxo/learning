@@ -65,30 +65,28 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="bg-footer scroll-mt-[37vh] bg-cover bg-center md:scroll-mt-[50vh]"
+      className="bg-footer scroll-mt-[6.8rem] bg-cover bg-center md:scroll-mt-[50vh]"
     >
-      <div className="mx-auto max-w-[770px] px-4 pb-[200px]">
-        <div className="relative -top-[10rem] bg-white px-4 py-10 md:px-10 md:py-14 lg:px-12">
+      <div className="mx-auto grid max-w-[770px] gap-y-8 p-4 md:pb-[200px]">
+        <div className="relative bg-white px-4 py-10 md:-top-[10rem] md:px-10 md:py-14 lg:px-12">
           {/* Title */}
-          <div>
-            <SectionsTitle
-              isBgDark={false}
-              isTitle={true}
-              text={"Get in touch"}
-            />
-          </div>
+          <SectionsTitle
+            isBgDark={false}
+            isTitle={true}
+            text={"Get in touch"}
+          />
           <div className="grid gap-y-6 md:grid-cols-2">
             {/* Links */}
             <div className="info grid justify-items-center gap-y-10 font-[Montserrat] text-[15px] text-black md:justify-items-start md:gap-y-4  md:text-[18px]">
               {userMap.map(({ id, icon, text, link }) => (
-                <a key={id} href={link} className="relative ml-6">
+                <a key={id} href={link} className="relative md:ml-6">
                   <span className="text-mid-purple absolute -left-6 top-[1px] overflow-hidden text-[15px] md:top-[2px]">
                     <FontAwesomeIcon icon={icon} />
                   </span>
                   {text}
                 </a>
               ))}
-              <p className="relative ml-6 font-[Montserrat]">
+              <p className="relative font-[Montserrat] md:ml-6">
                 <span className="text-mid-purple absolute -left-6 top-[1px] overflow-hidden text-[15px] md:top-[2px]">
                   <FontAwesomeIcon icon={faClock} />
                 </span>

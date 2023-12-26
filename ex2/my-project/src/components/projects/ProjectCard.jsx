@@ -52,17 +52,15 @@ const ProjectCard = ({
           {/* Title and description */}
           <SectionsTitle text={title} isBgDark={false} isTitle={false} />
           <p className="w-full max-w-[470px]">{description}</p>
-
-          {/* Hidden description */}
           {details && (
-            <p
-              className={`animate__animated w-full max-w-[470px] animate__slideIn${posAnimation} duration-500`}
-            >
+            <p className="w-full max-w-[470px]">
               {description}
               {description}
               {description}
             </p>
           )}
+
+          {/* Hidden description */}
         </div>
         <Button
           onClick={() => setDetails(!details)}

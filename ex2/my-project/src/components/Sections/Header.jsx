@@ -5,6 +5,22 @@ import Nav from "../nav/NavBar";
 import links from "../nav/nav.json";
 import Social from "../socialBar/Social";
 
+let section = document.querySelectorAll("section");
+let navLink = document.querySelectorAll("header nav a");
+window.onscroll = () => {
+  section.forEach((sec) => {
+    let top = window.scrollY;
+    let offset = sec.offsetTop - 150;
+    let height = sec.offsetHeight;
+    let id = sec.getAttribute("id");
+    if (top > offset && top < offset + height) {
+      navLink.forEach((link) => {
+        link.classList.remove("active");
+      });
+    }
+  });
+};
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -25,7 +41,7 @@ const Header = () => {
       className={`fixed left-0 top-0 z-[999] w-full bg-cover bg-no-repeat py-3 font-[Source-Sans] transition-all 
       ${isScrolled ? "bg-header bg-right-top shadow-2xl" : "md:top-4"}`}
     >
-      <div className="lg:grid-cols-header md:grid-cols-header-md container grid grid-cols-2 items-center gap-x-5 md:px-2">
+      <div className="container-header lg:grid-cols-header md:grid-cols-header-md md:gap-x-18 container-header grid grid-cols-2 items-center gap-x-5 lg:gap-x-5">
         <Logo />
         <Burger />
         {window.innerWidth > 768 ? (

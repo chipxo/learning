@@ -54,14 +54,14 @@ const Gallery = (props) => {
           {/* Hidden img */}
           {hiddenImg && (
             <div
-              className={`grid-cols-gallery-min animate__animated animate__fadeInDown grid gap-3 duration-200`}
+              className={`grid-cols-gallery-min relative -top-10 grid gap-3`}
             >
-              {[...imgHidden, ...img, ...imgHidden].map((id) => (
+              {[...imgHidden].map((id) => (
                 <img
-                  key={`${id}_${Math.floor(Math.random() * 100)}`}
+                  key={id}
                   src={`/gallery_img/gallery_${id}.png`}
-                  className="hover:cursor-glass w-full shadow-lg transition hover:scale-95 sm:max-w-full"
-                  alt={`img-${id}`}
+                  className="hover:cursor-glass w-full shadow-lg transition hover:scale-105 sm:max-w-full"
+                  alt={id}
                   data-fancybox="gallery"
                 />
               ))}

@@ -5,20 +5,12 @@ import "swiper/css/scrollbar";
 import { A11y, Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Slide from "./Slide";
-
-const slider = [
-  {
-    id: 1,
-    className: "grid place-items-center pr-2",
-    title: "Simple & Modern",
-    description: "We make world beautiful every day",
-  },
-];
+import slides from "./slides.json";
 
 export default () => {
   return (
     <Swiper
-      className="md:h-dvh container h-[50dvh]"
+      className="h-[60vh] md:h-screen "
       modules={[Autoplay, Navigation, Pagination, A11y]}
       direction={"vertical"}
       loop={true}
@@ -27,17 +19,17 @@ export default () => {
         delay: 2500,
         disableOnInteraction: false,
       }}
-      spaceBetween={10}
+      spaceBetween={0}
       slidesPerView={1}
       pagination={{ clickable: true }}
     >
-      {[...slider, ...slider, ...slider, ...slider, ...slider].map(
-        ({ id, className, title, description }, index) => (
-          <SwiperSlide key={id + index} className={className}>
-            <Slide title={title} description={description}></Slide>
+      <div className="container">
+        {[...slides].map(({ id, className, title, description, bg }) => (
+          <SwiperSlide key={id} className={className}>
+            <Slide title={title} description={description} bg={bg}></Slide>
           </SwiperSlide>
-        ),
-      )}
+        ))}
+      </div>
     </Swiper>
   );
 };
