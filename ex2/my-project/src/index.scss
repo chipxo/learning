@@ -69,7 +69,7 @@ header {
           @apply before:absolute before:-left-4 before:top-[7px] before:hidden before:h-2 before:w-2 before:rounded-full before:border before:content-[""] hover:before:bg-white focus:before:bg-white md:before:inline-block;
         }
         a.active {
-          @apply scale-105 before:bg-white;
+          @apply before:bg-white;
         }
       }
     }
@@ -98,7 +98,7 @@ section#aboutUs {
   div.swiper-button-next {
     @apply left-6 right-0 top-[90vh] mx-auto flex rounded-full border px-5 text-white shadow-xl transition-all;
     &::after {
-      @apply mr-[1px] rotate-90 text-[14px];
+      @apply mr-[4px] rotate-90 text-[14px];
     }
     &:hover {
       @apply scale-110;

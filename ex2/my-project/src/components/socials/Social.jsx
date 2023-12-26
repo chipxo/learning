@@ -1,6 +1,6 @@
-import Facebook from "../socialIcons/Facebook";
-import Instagram from "../socialIcons/Instagram";
-import Twitter from "../socialIcons/Twitter";
+import Facebook from "./Facebook";
+import Instagram from "./Instagram";
+import Twitter from "./Twitter";
 
 const Social = ({ isHeader }) => {
   const display = isHeader ? "hidden lg:flex" : "flex";

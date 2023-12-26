@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ErrorMessage, Field, Formik } from "formik";
 import Logo from "../common/Logo";
 import SectionsTitle from "../common/SectionsTitle";
-import Social from "../socialBar/Social";
+import Social from "../socials/Social";
 
 const initialValues = {
   userName: "",

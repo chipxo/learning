@@ -3,23 +3,7 @@ import Logo from "../common//Logo";
 import Burger from "../common/Burger";
 import Nav from "../nav/NavBar";
 import links from "../nav/nav.json";
-import Social from "../socialBar/Social";
-
-let section = document.querySelectorAll("section");
-let navLink = document.querySelectorAll("header nav a");
-window.onscroll = () => {
-  section.forEach((sec) => {
-    let top = window.scrollY;
-    let offset = sec.offsetTop - 150;
-    let height = sec.offsetHeight;
-    let id = sec.getAttribute("id");
-    if (top > offset && top < offset + height) {
-      navLink.forEach((link) => {
-        link.classList.remove("active");
-      });
-    }
-  });
-};
+import Social from "../socials/Social";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
