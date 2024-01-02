@@ -4,8 +4,8 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { A11y, Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import slides from "../../data/slidesMaskGroup.json";
 import Slide from "./Slide";
-import slides from "./slides.json";
 
 export default () => {
   return (

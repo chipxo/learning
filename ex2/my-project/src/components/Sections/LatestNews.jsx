@@ -1,5 +1,5 @@
 import SectionsTitle from "../common/SectionsTitle";
-import { Slider } from "../sliderNews/Slider";
+import Slider from "../containers/sliderNews/Slider";
 
 const LatestNews = () => {
   return (

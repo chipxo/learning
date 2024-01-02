@@ -1,6 +1,16 @@
-const Card = ({ id, image, title, description, userName, data, userPhoto }) => {
+import SubTitle from "../../common/SubTitle";
+
+const Slide = ({
+  id,
+  image,
+  title,
+  description,
+  userName,
+  data,
+  userPhoto,
+}) => {
   return (
-    <div className="mx-auto mb-12 max-w-[370px] bg-white drop-shadow-2xl transition-all hover:scale-105">
+    <div className="mx-auto mb-12 max-w-[370px] bg-white transition-all hover:scale-105">
       <img src={image} alt={title} className="h-44 w-full object-cover" />
       <div className="flex flex-col gap-y-4 px-5 py-5">
         <h2 className="text-dark-blue text-[18px] font-bold uppercase md:text-[22px]">
@@ -13,9 +23,9 @@ const Card = ({ id, image, title, description, userName, data, userPhoto }) => {
             alt={`photo of ${userName}`}
             className="rounded-full"
           />
-          <div>
-            <h3 className="text-[16px] uppercase md:text-[18px]">{userName}</h3>
-            <p className="text-light-blue">{data}</p>
+          <div className="grid items-center gap-y-7">
+            <SubTitle text={userName} isLong={false} />
+            <p className="text-light-blue font-[Montserrat]">{data}</p>
           </div>
         </div>
       </div>
@@ -23,4 +33,4 @@ const Card = ({ id, image, title, description, userName, data, userPhoto }) => {
   );
 };
 
-export default Card;
+export default Slide;

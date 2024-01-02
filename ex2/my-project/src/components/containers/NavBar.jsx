@@ -11,9 +11,9 @@ const Nav = ({ links, isBurger }) => {
 
   const navStyle = `bg-news absolute left-0 top-0 grid h-screen w-full place-items-center bg-cover ${showOnClick}`;
 
-  const ulBurger = "grid place-items-center gap-y-24 text-3xl font-bold";
+  const ulBurger = "place-items-center gap-y-24 text-2xl font-bold";
 
-  const ulHeader = "grid grid-cols-4 justify-items-center text-sm";
+  const ulHeader = "grid-cols-4 justify-items-center text-sm";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,7 +54,7 @@ const Nav = ({ links, isBurger }) => {
       <ul
         className={`${
           window.innerWidth < 768 ? ulBurger : ulHeader
-        } pt-[4px] uppercase text-white`}
+        } grid pt-[4px] uppercase text-white`}
       >
         {links.map(({ id, title, href }) => (
           <li

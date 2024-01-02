@@ -1,5 +1,5 @@
 const SectionsTitle = ({ text, isBgDark, isTitle }) => {
-  const titleClassName = isBgDark ? "text-white" : "text-dark-blue";
+  const titleTextColor = isBgDark ? "text-white" : "text-dark-blue";
 
   const beforeBg = isBgDark ? "before:bg-white" : "before:bg-dark-blue";
 
@@ -9,7 +9,7 @@ const SectionsTitle = ({ text, isBgDark, isTitle }) => {
 
   return (
     <h2
-      className={`relative font-[Montserrat] text-xl font-bold  uppercase md:text-2xl lg:text-4xl ${secTitle} ${titleClassName}`}
+      className={`relative font-[Montserrat] text-xl font-bold  uppercase md:text-2xl lg:text-4xl ${secTitle} ${titleTextColor}`}
     >
       {text}
     </h2>

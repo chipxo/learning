@@ -1,8 +1,8 @@
-import Facebook from "./Facebook";
-import Instagram from "./Instagram";
-import Twitter from "./Twitter";
+import Facebook from "../common/FacebookLogo";
+import Instagram from "../common/InstagramLogo";
+import Twitter from "../common/TwitterLogo";
 
-const Social = ({ isHeader }) => {
+const SocialBar = ({ isHeader }) => {
   const display = isHeader ? "hidden lg:flex" : "flex";
 
   return (
@@ -16,4 +16,4 @@ const Social = ({ isHeader }) => {
   );
 };
 
-export default Social;
+export default SocialBar;

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import Logo from "../common//Logo";
 import Burger from "../common/Burger";
-import Nav from "../nav/NavBar";
-import links from "../nav/nav.json";
-import Social from "../socials/Social";
+import Logo from "../common/CompanyLogo";
+import Nav from "../containers/NavBar";
+import SocialBar from "../containers/SocialBar";
+import links from "../data/navLinks.json";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,7 +31,7 @@ const Header = () => {
         {window.innerWidth > 768 ? (
           <Nav links={links} isBurger={false} />
         ) : null}
-        <Social isHeader={true} />
+        <SocialBar isHeader={true} />
       </div>
     </header>
   );

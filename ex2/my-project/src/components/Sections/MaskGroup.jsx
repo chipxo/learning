@@ -1,9 +1,9 @@
-import SliderMaskGroup from "../sliderMaskGroup/SliderMaskGroup";
+import Slider from "../containers/sliderMaskGroup/Slider";
 
 const MaskGroup = () => {
   return (
     <section id="aboutUs" className="font-[Montserrat]">
-      <SliderMaskGroup />
+      <Slider />
     </section>
   );
 };

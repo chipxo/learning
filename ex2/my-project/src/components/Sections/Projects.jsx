@@ -1,6 +1,6 @@
 import SectionsTitle from "../common/SectionsTitle";
-import ProjectsCard from "../projects/ProjectCard";
-import cards from "../projects/projects.json";
+import ProjectsCard from "../containers/ProjectCard";
+import cards from "../data/projectsData.json";
 
 const Projects = () => {
   return (
@@ -8,6 +8,7 @@ const Projects = () => {
       id="projects"
       className="relative my-24 scroll-mt-24 overflow-clip pt-4"
     >
+      {/* overflow-clip */}
       <div className="container grid gap-y-10 md:gap-y-12 lg:gap-y-24">
         <SectionsTitle text={"What we do"} isBgDark={false} isTitle={true} />
         <div className="grid gap-y-20 lg:gap-y-[140px]">

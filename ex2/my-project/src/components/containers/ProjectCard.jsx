@@ -1,12 +1,11 @@
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "animate.css";
 import { useState } from "react";
-import Button from "../common/Button";
+import Button from "../common/CommonButton";
 import SectionsTitle from "../common/SectionsTitle";
+import SubTitle from "../common/SubTitle";
 
 const ProjectCard = ({
-  id,
   subTitle,
   title,
   description,
@@ -17,24 +16,15 @@ const ProjectCard = ({
 }) => {
   const [details, setDetails] = useState(false);
 
-  const buttonText = details ? "less" : "more";
+  const bgPosition = isNumber ? "left" : "right";
 
-  const isReversed = isNumber ? "md:flex-row-reverse" : "md:flex-row";
-
-  const rightPosition =
-    "-right-[22rem] lg:-right-[26rem] xl:-right-[30rem] 2xl:-right-[38rem]";
-  const leftPosition =
-    "-left-[22rem] lg:-left-[26rem] xl:-left-[30rem] 2xl:-left-[38rem]";
-
-  const bgPositionAndColor = isNumber
-    ? `bg-mid-purple ${rightPosition}`
-    : `bg-light-blue ${leftPosition}`;
-
-  const posAnimation = isNumber ? "Left" : "Right";
+  const bgColor = isNumber ? "bg-mid-purple" : "bg-light-blue";
 
   return (
     <div
-      className={`flex flex-col justify-between gap-x-[30px] gap-y-6 lg:gap-x-[70px] ${isReversed}`}
+      className={`relative flex flex-col justify-between gap-x-[30px] gap-y-6 lg:gap-x-[70px] ${
+        isNumber ? "md:flex-row-reverse" : "md:flex-row"
+      }`}
     >
       <div className="relative">
         {/* Card image */}
@@ -42,16 +32,20 @@ const ProjectCard = ({
 
         {/* Image background */}
         <div
-          className={`absolute -top-7 -z-[10] hidden h-72 w-[30rem] md:block lg:-top-12 lg:aspect-video lg:h-auto lg:w-[38rem] xl:-top-16 xl:w-[48rem] 2xl:w-[56rem] ${bgPositionAndColor}`}
+          className={`absolute -top-7 -z-[10] hidden h-72 w-[30rem] md:block lg:-top-12 lg:aspect-video lg:h-auto lg:w-[38rem] xl:-top-16 xl:w-[48rem] 2xl:w-[56rem] ${bgColor} ${bgPosition}-20`}
         ></div>
       </div>
       <div className="grid items-center justify-items-start gap-y-4">
         <div className="grid gap-y-6">
-          <h3 className="-mb-6 text-sm uppercase lg:text-[22px]">{subTitle}</h3>
+          {/* Subtitle */}
+          <SubTitle isLong={true} text={subTitle} />
 
           {/* Title and description */}
           <SectionsTitle text={title} isBgDark={false} isTitle={false} />
           <p className="w-full max-w-[470px]">{description}</p>
+
+          {/* Hidden description */}
+
           {details && (
             <p className="w-full max-w-[470px]">
               {description}
@@ -59,13 +53,11 @@ const ProjectCard = ({
               {description}
             </p>
           )}
-
-          {/* Hidden description */}
         </div>
         <Button
           onClick={() => setDetails(!details)}
-          text={`${buttonText} details`}
-          buttonText={buttonText}
+          text={`${details ? "less" : "more"} details`}
+          isActive={details}
         />
 
         {/* Location */}

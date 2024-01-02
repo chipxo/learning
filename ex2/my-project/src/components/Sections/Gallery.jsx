@@ -1,6 +1,6 @@
 import "animate.css";
 import { useEffect, useRef, useState } from "react";
-import Button from "../common/Button";
+import Button from "../common/CommonButton";
 import SectionsTitle from "../common/SectionsTitle";
 
 import { Fancybox as NativeFancybox } from "@fancyapps/ui";
@@ -13,9 +13,9 @@ const imgHidden = [3, 4, 1, 5, 2];
 const Gallery = (props) => {
   const [hiddenImg, setHiddenImg] = useState(false);
 
-  const buttonText = hiddenImg ? "less" : "more";
-
   const containerRef = useRef(null);
+
+  const buttonText = hiddenImg ? "less" : "more";
 
   useEffect(() => {
     const container = containerRef.current;
@@ -44,7 +44,7 @@ const Gallery = (props) => {
             <img
               key={`${id}`}
               src={`/gallery_img/gallery_${id}.png`}
-              className="hover:cursor-glass w-full shadow-lg transition hover:scale-95 sm:max-w-full"
+              className="hover:cursor-glass w-full transition hover:scale-95 sm:max-w-full"
               alt={`img-${id}`}
               data-fancybox="gallery"
             />
@@ -60,7 +60,7 @@ const Gallery = (props) => {
                 <img
                   key={id}
                   src={`/gallery_img/gallery_${id}.png`}
-                  className="hover:cursor-glass w-full shadow-lg transition hover:scale-105 sm:max-w-full"
+                  className="hover:cursor-glass w-full transition hover:scale-105 sm:max-w-full"
                   alt={id}
                   data-fancybox="gallery"
                 />
@@ -70,7 +70,7 @@ const Gallery = (props) => {
         </div>
         <Button
           text={`See ${buttonText}`}
-          buttonText={buttonText}
+          isActive={hiddenImg}
           onClick={() => setHiddenImg(!hiddenImg)}
         />
       </div>

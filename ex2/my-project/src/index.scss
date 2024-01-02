@@ -96,12 +96,12 @@ section#aboutUs {
     @apply hidden;
   }
   div.swiper-button-next {
-    @apply left-6 right-0 top-[90vh] mx-auto flex rounded-full border px-5 text-white shadow-xl transition-all;
+    @apply border-social-border left-6 right-0 top-[90vh] mx-auto flex rounded-full border px-5 text-white transition-all;
     &::after {
-      @apply mr-[4px] rotate-90 text-[14px];
+      @apply mx-auto rotate-90 text-[10px];
     }
     &:hover {
-      @apply scale-110;
+      @apply border-white;
     }
   }
 }
@@ -124,12 +124,12 @@ section#news {
 
   div.swiper-button-prev,
   div.swiper-button-next {
-    @apply hidden rounded-full border px-5 text-white shadow-xl transition-all md:flex;
+    @apply border-social-border hidden rounded-full border px-5 text-white transition-all md:flex;
     &::after {
-      @apply text-[14px];
+      @apply text-[10px];
     }
     &:hover {
-      @apply scale-110;
+      @apply border-white;
     }
   }
 }
@@ -138,7 +138,7 @@ footer#footer {
   form {
     input.input {
       border-bottom: 1px solid hsla(213, 33%, 26%, 1);
-      @apply focus:scale-110 focus:border-white;
+      @apply focus:scale-105 focus:border-white;
     }
   }
 }

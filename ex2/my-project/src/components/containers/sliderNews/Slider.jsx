@@ -3,10 +3,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { A11y, Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Card from "./Card";
-import slides from "./slides.json";
+import slides from "../../data/slidesNews.json";
+import Slide from "./Slide";
 
-export const Slider = () => {
+const Slider = () => {
   return (
     <>
       <Swiper
@@ -34,7 +34,7 @@ export const Slider = () => {
         {slides.map(
           ({ id, image, title, description, userName, data, userPhoto }) => (
             <SwiperSlide key={id}>
-              <Card
+              <Slide
                 image={image}
                 title={title}
                 description={description}
@@ -49,3 +49,5 @@ export const Slider = () => {
     </>
   );
 };
+
+export default Slider;
