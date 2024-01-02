@@ -32,6 +32,8 @@ const Footer = () => {
                 </a>
               ))}
             </div>
+            
+            {/* Form */}
             <Form />
           </div>
         </div>

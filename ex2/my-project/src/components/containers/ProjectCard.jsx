@@ -16,7 +16,7 @@ const ProjectCard = ({
 }) => {
   const [details, setDetails] = useState(false);
 
-  const bgPosition = isNumber ? "left" : "right";
+  const bgPosition = isNumber ? "left-20" : "right-20";
 
   const bgColor = isNumber ? "bg-mid-purple" : "bg-light-blue";
 
@@ -32,7 +32,7 @@ const ProjectCard = ({
 
         {/* Image background */}
         <div
-          className={`absolute -top-7 -z-[10] hidden h-72 w-[30rem] md:block lg:-top-12 lg:aspect-video lg:h-auto lg:w-[38rem] xl:-top-16 xl:w-[48rem] 2xl:w-[56rem] ${bgColor} ${bgPosition}-20`}
+          className={`absolute -top-7 -z-[10] hidden h-72 w-[30rem] md:block lg:-top-12 lg:aspect-video lg:h-auto lg:w-[38rem] xl:-top-16 xl:w-[48rem] 2xl:w-[56rem] ${bgColor} ${bgPosition}`}
         ></div>
       </div>
       <div className="grid items-center justify-items-start gap-y-4">
