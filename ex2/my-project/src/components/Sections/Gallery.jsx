@@ -34,12 +34,10 @@ const Gallery = (props) => {
     <section ref={containerRef} id="gallery" className="relative mt-20">
       <div className="container grid gap-y-12 text-center">
         <div>
-
           {/* Title */}
           <SectionsTitle isBgDark={false} isTitle={true} text={"Gallery"} />
         </div>
         <div className="md:photos relative z-[888] grid gap-3 ">
-
           {/* Images */}
           {img.map((id) => (
             <img
@@ -52,17 +50,14 @@ const Gallery = (props) => {
           ))}
         </div>
         <div className="relative">
-
           {/* Hidden images */}
           {hiddenImg && (
-            <div
-              className={`grid-cols-gallery-min relative -top-10 grid gap-3`}
-            >
+            <div className="grid-cols-gallery-min relative -top-10 grid gap-3 transition duration-1000">
               {[...imgHidden].map((id) => (
                 <img
                   key={id}
                   src={`/gallery_img/gallery_${id}.png`}
-                  className="hover:cursor-glass w-full transition hover:scale-105 sm:max-w-full"
+                  className="hover:cursor-glass w-full hover:scale-105 sm:max-w-full"
                   alt={id}
                   data-fancybox="gallery"
                 />
