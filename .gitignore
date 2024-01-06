@@ -2,10 +2,4 @@
 *.DS_Store
 node_modules
 .vscode
-package.json
-package-lock.json
-postcss.config.js
-prettier.config.js
 .prettierignore
-.prettierrrc
-tailwind.config.js
