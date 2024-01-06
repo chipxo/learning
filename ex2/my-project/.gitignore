@@ -27,4 +27,4 @@ README.md
 .eslintcr.cjs
 tailwing.config.json
 .prettiecrc.json
-# vite.config.json
+vite.config.json
