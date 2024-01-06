@@ -10,7 +10,7 @@ const Slide = ({
   userPhoto,
 }) => {
   return (
-    <div className="mx-auto mb-12 max-w-[370px] bg-white transition-all hover:scale-105">
+    <div className="mx-auto mb-12 max-w-[370px] bg-white transition-all">
       <img src={image} alt={title} className="h-44 w-full object-cover" />
       <div className="flex flex-col gap-y-4 px-5 py-5">
         <h2 className="text-dark-blue text-[18px] font-bold uppercase md:text-[22px]">

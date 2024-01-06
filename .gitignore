@@ -1,4 +1,9 @@
 .idea/
 *.DS_Store
 node_modules
+<<<<<<< HEAD
 .vscode
+=======
+.vscode
+.prettierignore
+>>>>>>> ex2
